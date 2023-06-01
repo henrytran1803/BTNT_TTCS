@@ -22,7 +22,6 @@ C:\Users\henry\source\repos\BTNT\BTNT\bin\Debug\DevExpress.XtraEditors.v22.2.xml
 C:\Users\henry\source\repos\BTNT\BTNT\bin\Debug\DevExpress.Pdf.v22.2.Core.xml
 C:\Users\henry\source\repos\BTNT\BTNT\bin\Debug\DevExpress.Pdf.v22.2.Drawing.xml
 C:\Users\henry\source\repos\BTNT\BTNT\obj\Debug\BTNT.csproj.AssemblyReference.cache
-C:\Users\henry\source\repos\BTNT\BTNT\obj\Debug\BTNT.Manager.FomTrienLam.resources
 C:\Users\henry\source\repos\BTNT\BTNT\obj\Debug\BTNT.Manager.FormBST.resources
 C:\Users\henry\source\repos\BTNT\BTNT\obj\Debug\BTNT.Manager.FormDieuKhac.resources
 C:\Users\henry\source\repos\BTNT\BTNT\obj\Debug\BTNT.Manager.FormHoiHoa.resources
@@ -41,3 +40,5 @@ C:\Users\henry\source\repos\BTNT\BTNT\obj\Debug\BTNT.csproj.CoreCompileInputs.ca
 C:\Users\henry\source\repos\BTNT\BTNT\obj\Debug\BTNT.csproj.CopyComplete
 C:\Users\henry\source\repos\BTNT\BTNT\obj\Debug\BTNT.exe
 C:\Users\henry\source\repos\BTNT\BTNT\obj\Debug\BTNT.pdb
+C:\Users\henry\source\repos\BTNT\BTNT\obj\Debug\BTNT.Manager.FormTrienLam.resources
+C:\Users\henry\source\repos\BTNT\BTNT\obj\Debug\BTNT.View.FormLogin.resources
