@@ -93,7 +93,7 @@ namespace BTNT.View
             this.rbpTrangChu,
             this.rbpTPNT,
             this.rbpTrienLam});
-            this.ribbon.Size = new System.Drawing.Size(977, 158);
+            this.ribbon.Size = new System.Drawing.Size(742, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
@@ -299,10 +299,10 @@ namespace BTNT.View
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 543);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 644);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(977, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(742, 24);
             // 
             // documentManager1
             // 
@@ -316,7 +316,7 @@ namespace BTNT.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 567);
+            this.ClientSize = new System.Drawing.Size(742, 668);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;

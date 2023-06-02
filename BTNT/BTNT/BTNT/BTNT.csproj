@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoiTuong\DtTacGia.cs" />
+    <Compile Include="DoiTuong\DtTPNT.cs" />
     <Compile Include="Manager\FormBST.cs">
       <SubType>Form</SubType>
     </Compile>
