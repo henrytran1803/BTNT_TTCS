@@ -435,7 +435,6 @@ namespace BTNT.Manager
                     }
 
                     FormTacGia_Load(sender, e);
-
                 }
                 else
                 {
@@ -446,7 +445,7 @@ namespace BTNT.Manager
             }
             else if(cheDo==2)
             {
-                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn sửa dữ liệu khoa này?", "Xác nhận sửa",
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn sửa dữ liệu tác giả này?", "Xác nhận sửa",
                                      MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
