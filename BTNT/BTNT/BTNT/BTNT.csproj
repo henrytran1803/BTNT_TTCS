@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoiTuong\DtDieuKhac.cs" />
+    <Compile Include="DoiTuong\DtHoiHoa.cs" />
+    <Compile Include="DoiTuong\DtKhac.cs" />
     <Compile Include="DoiTuong\DtTacGia.cs" />
     <Compile Include="DoiTuong\DtTPNT.cs" />
     <Compile Include="Manager\FormBST.cs">
