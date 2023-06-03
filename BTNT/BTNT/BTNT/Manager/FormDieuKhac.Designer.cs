@@ -46,28 +46,28 @@ namespace BTNT.Manager
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gbDSTPDK = new System.Windows.Forms.GroupBox();
-            this.gbTPNT = new System.Windows.Forms.GroupBox();
-            this.gbTT = new System.Windows.Forms.GroupBox();
-            this.btnChonMa = new System.Windows.Forms.Button();
-            this.btnChon = new System.Windows.Forms.Button();
-            this.lbMa = new System.Windows.Forms.Label();
-            this.lbPC = new System.Windows.Forms.Label();
-            this.lbVL = new System.Windows.Forms.Label();
-            this.cbbTP = new System.Windows.Forms.ComboBox();
-            this.cbbPC = new System.Windows.Forms.ComboBox();
-            this.cbbVL = new System.Windows.Forms.ComboBox();
-            this.lbCC = new System.Windows.Forms.Label();
-            this.lbKL = new System.Windows.Forms.Label();
-            this.tbCC = new System.Windows.Forms.TextBox();
-            this.tbKL = new System.Windows.Forms.TextBox();
             this.dgDSPTDK = new System.Windows.Forms.DataGridView();
+            this.gbTPNT = new System.Windows.Forms.GroupBox();
             this.dgDSTPNT = new System.Windows.Forms.DataGridView();
+            this.gbTT = new System.Windows.Forms.GroupBox();
+            this.tbKL = new System.Windows.Forms.TextBox();
+            this.tbCC = new System.Windows.Forms.TextBox();
+            this.lbKL = new System.Windows.Forms.Label();
+            this.lbCC = new System.Windows.Forms.Label();
+            this.cbbVL = new System.Windows.Forms.ComboBox();
+            this.cbbPC = new System.Windows.Forms.ComboBox();
+            this.cbbTP = new System.Windows.Forms.ComboBox();
+            this.lbVL = new System.Windows.Forms.Label();
+            this.lbPC = new System.Windows.Forms.Label();
+            this.lbMa = new System.Windows.Forms.Label();
+            this.btnChon = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.gbDSTPDK.SuspendLayout();
-            this.gbTPNT.SuspendLayout();
-            this.gbTT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSPTDK)).BeginInit();
+            this.gbTPNT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSTPNT)).BeginInit();
+            this.gbTT.SuspendLayout();
             this.SuspendLayout();
             // 
             // barManager1
@@ -142,6 +142,7 @@ namespace BTNT.Manager
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnHoanTac
             // 
@@ -150,6 +151,7 @@ namespace BTNT.Manager
             this.btnHoanTac.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.ImageOptions.Image")));
             this.btnHoanTac.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.ImageOptions.LargeImage")));
             this.btnHoanTac.Name = "btnHoanTac";
+            this.btnHoanTac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoanTac_ItemClick);
             // 
             // btnReload
             // 
@@ -158,6 +160,7 @@ namespace BTNT.Manager
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnThoat
             // 
@@ -166,6 +169,7 @@ namespace BTNT.Manager
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // bar3
             // 
@@ -216,24 +220,42 @@ namespace BTNT.Manager
             this.gbDSTPDK.Controls.Add(this.dgDSPTDK);
             this.gbDSTPDK.Location = new System.Drawing.Point(0, 27);
             this.gbDSTPDK.Name = "gbDSTPDK";
-            this.gbDSTPDK.Size = new System.Drawing.Size(378, 244);
+            this.gbDSTPDK.Size = new System.Drawing.Size(584, 244);
             this.gbDSTPDK.TabIndex = 4;
             this.gbDSTPDK.TabStop = false;
             this.gbDSTPDK.Text = "Danh sách tác phẩm điêu khắc";
             // 
+            // dgDSPTDK
+            // 
+            this.dgDSPTDK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDSPTDK.Location = new System.Drawing.Point(0, 20);
+            this.dgDSPTDK.Name = "dgDSPTDK";
+            this.dgDSPTDK.Size = new System.Drawing.Size(584, 224);
+            this.dgDSPTDK.TabIndex = 0;
+            this.dgDSPTDK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDSPTDK_CellContentClick);
+            // 
             // gbTPNT
             // 
-            this.gbTPNT.Controls.Add(this.btnChonMa);
             this.gbTPNT.Controls.Add(this.dgDSTPNT);
-            this.gbTPNT.Location = new System.Drawing.Point(400, 27);
+            this.gbTPNT.Location = new System.Drawing.Point(602, 27);
             this.gbTPNT.Name = "gbTPNT";
-            this.gbTPNT.Size = new System.Drawing.Size(470, 244);
+            this.gbTPNT.Size = new System.Drawing.Size(268, 244);
             this.gbTPNT.TabIndex = 5;
             this.gbTPNT.TabStop = false;
             this.gbTPNT.Text = "Danh sách tác phẩm nghệ thuật";
             // 
+            // dgDSTPNT
+            // 
+            this.dgDSTPNT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDSTPNT.Location = new System.Drawing.Point(0, 20);
+            this.dgDSTPNT.Name = "dgDSTPNT";
+            this.dgDSTPNT.Size = new System.Drawing.Size(268, 224);
+            this.dgDSTPNT.TabIndex = 1;
+            this.dgDSTPNT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDSTPNT_CellContentClick);
+            // 
             // gbTT
             // 
+            this.gbTT.Controls.Add(this.label1);
             this.gbTT.Controls.Add(this.tbKL);
             this.gbTT.Controls.Add(this.tbCC);
             this.gbTT.Controls.Add(this.lbKL);
@@ -252,84 +274,19 @@ namespace BTNT.Manager
             this.gbTT.TabStop = false;
             this.gbTT.Text = "Thông tin";
             // 
-            // btnChonMa
+            // tbKL
             // 
-            this.btnChonMa.Location = new System.Drawing.Point(389, 12);
-            this.btnChonMa.Name = "btnChonMa";
-            this.btnChonMa.Size = new System.Drawing.Size(75, 232);
-            this.btnChonMa.TabIndex = 7;
-            this.btnChonMa.Text = "chọn";
-            this.btnChonMa.UseVisualStyleBackColor = true;
+            this.tbKL.Location = new System.Drawing.Point(428, 92);
+            this.tbKL.Name = "tbKL";
+            this.tbKL.Size = new System.Drawing.Size(261, 21);
+            this.tbKL.TabIndex = 12;
             // 
-            // btnChon
+            // tbCC
             // 
-            this.btnChon.Location = new System.Drawing.Point(783, 175);
-            this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(75, 23);
-            this.btnChon.TabIndex = 0;
-            this.btnChon.Text = "Chọn";
-            this.btnChon.UseVisualStyleBackColor = true;
-            // 
-            // lbMa
-            // 
-            this.lbMa.AutoSize = true;
-            this.lbMa.Location = new System.Drawing.Point(24, 43);
-            this.lbMa.Name = "lbMa";
-            this.lbMa.Size = new System.Drawing.Size(72, 13);
-            this.lbMa.TabIndex = 1;
-            this.lbMa.Text = "Mã tác phẩm:";
-            // 
-            // lbPC
-            // 
-            this.lbPC.AutoSize = true;
-            this.lbPC.Location = new System.Drawing.Point(24, 100);
-            this.lbPC.Name = "lbPC";
-            this.lbPC.Size = new System.Drawing.Size(66, 13);
-            this.lbPC.TabIndex = 2;
-            this.lbPC.Text = "Phong cách:";
-            // 
-            // lbVL
-            // 
-            this.lbVL.AutoSize = true;
-            this.lbVL.Location = new System.Drawing.Point(369, 43);
-            this.lbVL.Name = "lbVL";
-            this.lbVL.Size = new System.Drawing.Size(46, 13);
-            this.lbVL.TabIndex = 3;
-            this.lbVL.Text = "Vật liệu:";
-            // 
-            // cbbTP
-            // 
-            this.cbbTP.FormattingEnabled = true;
-            this.cbbTP.Location = new System.Drawing.Point(96, 35);
-            this.cbbTP.Name = "cbbTP";
-            this.cbbTP.Size = new System.Drawing.Size(261, 21);
-            this.cbbTP.TabIndex = 5;
-            // 
-            // cbbPC
-            // 
-            this.cbbPC.FormattingEnabled = true;
-            this.cbbPC.Location = new System.Drawing.Point(96, 92);
-            this.cbbPC.Name = "cbbPC";
-            this.cbbPC.Size = new System.Drawing.Size(261, 21);
-            this.cbbPC.TabIndex = 6;
-            // 
-            // cbbVL
-            // 
-            this.cbbVL.FormattingEnabled = true;
-            this.cbbVL.Location = new System.Drawing.Point(428, 35);
-            this.cbbVL.Name = "cbbVL";
-            this.cbbVL.Size = new System.Drawing.Size(261, 21);
-            this.cbbVL.TabIndex = 8;
-            this.cbbVL.SelectedIndexChanged += new System.EventHandler(this.cbbVL_SelectedIndexChanged);
-            // 
-            // lbCC
-            // 
-            this.lbCC.AutoSize = true;
-            this.lbCC.Location = new System.Drawing.Point(24, 147);
-            this.lbCC.Name = "lbCC";
-            this.lbCC.Size = new System.Drawing.Size(58, 13);
-            this.lbCC.TabIndex = 9;
-            this.lbCC.Text = "Chiều cao:";
+            this.tbCC.Location = new System.Drawing.Point(96, 139);
+            this.tbCC.Name = "tbCC";
+            this.tbCC.Size = new System.Drawing.Size(261, 21);
+            this.tbCC.TabIndex = 11;
             // 
             // lbKL
             // 
@@ -340,35 +297,85 @@ namespace BTNT.Manager
             this.lbKL.TabIndex = 10;
             this.lbKL.Text = "Khối lượng:";
             // 
-            // tbCC
+            // lbCC
             // 
-            this.tbCC.Location = new System.Drawing.Point(96, 139);
-            this.tbCC.Name = "tbCC";
-            this.tbCC.Size = new System.Drawing.Size(261, 21);
-            this.tbCC.TabIndex = 11;
+            this.lbCC.AutoSize = true;
+            this.lbCC.Location = new System.Drawing.Point(24, 147);
+            this.lbCC.Name = "lbCC";
+            this.lbCC.Size = new System.Drawing.Size(58, 13);
+            this.lbCC.TabIndex = 9;
+            this.lbCC.Text = "Chiều cao:";
             // 
-            // tbKL
+            // cbbVL
             // 
-            this.tbKL.Location = new System.Drawing.Point(428, 92);
-            this.tbKL.Name = "tbKL";
-            this.tbKL.Size = new System.Drawing.Size(261, 21);
-            this.tbKL.TabIndex = 12;
+            this.cbbVL.FormattingEnabled = true;
+            this.cbbVL.Location = new System.Drawing.Point(428, 35);
+            this.cbbVL.Name = "cbbVL";
+            this.cbbVL.Size = new System.Drawing.Size(261, 21);
+            this.cbbVL.TabIndex = 8;
+            this.cbbVL.SelectedIndexChanged += new System.EventHandler(this.cbbVL_SelectedIndexChanged);
             // 
-            // dgDSPTDK
+            // cbbPC
             // 
-            this.dgDSPTDK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDSPTDK.Location = new System.Drawing.Point(0, 20);
-            this.dgDSPTDK.Name = "dgDSPTDK";
-            this.dgDSPTDK.Size = new System.Drawing.Size(378, 224);
-            this.dgDSPTDK.TabIndex = 0;
+            this.cbbPC.FormattingEnabled = true;
+            this.cbbPC.Location = new System.Drawing.Point(96, 92);
+            this.cbbPC.Name = "cbbPC";
+            this.cbbPC.Size = new System.Drawing.Size(261, 21);
+            this.cbbPC.TabIndex = 6;
             // 
-            // dgDSTPNT
+            // cbbTP
             // 
-            this.dgDSTPNT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDSTPNT.Location = new System.Drawing.Point(0, 20);
-            this.dgDSTPNT.Name = "dgDSTPNT";
-            this.dgDSTPNT.Size = new System.Drawing.Size(382, 224);
-            this.dgDSTPNT.TabIndex = 1;
+            this.cbbTP.FormattingEnabled = true;
+            this.cbbTP.Location = new System.Drawing.Point(96, 35);
+            this.cbbTP.Name = "cbbTP";
+            this.cbbTP.Size = new System.Drawing.Size(261, 21);
+            this.cbbTP.TabIndex = 5;
+            // 
+            // lbVL
+            // 
+            this.lbVL.AutoSize = true;
+            this.lbVL.Location = new System.Drawing.Point(369, 43);
+            this.lbVL.Name = "lbVL";
+            this.lbVL.Size = new System.Drawing.Size(46, 13);
+            this.lbVL.TabIndex = 3;
+            this.lbVL.Text = "Vật liệu:";
+            // 
+            // lbPC
+            // 
+            this.lbPC.AutoSize = true;
+            this.lbPC.Location = new System.Drawing.Point(24, 100);
+            this.lbPC.Name = "lbPC";
+            this.lbPC.Size = new System.Drawing.Size(66, 13);
+            this.lbPC.TabIndex = 2;
+            this.lbPC.Text = "Phong cách:";
+            // 
+            // lbMa
+            // 
+            this.lbMa.AutoSize = true;
+            this.lbMa.Location = new System.Drawing.Point(24, 43);
+            this.lbMa.Name = "lbMa";
+            this.lbMa.Size = new System.Drawing.Size(72, 13);
+            this.lbMa.TabIndex = 1;
+            this.lbMa.Text = "Mã tác phẩm:";
+            // 
+            // btnChon
+            // 
+            this.btnChon.Location = new System.Drawing.Point(746, 35);
+            this.btnChon.Name = "btnChon";
+            this.btnChon.Size = new System.Drawing.Size(112, 157);
+            this.btnChon.TabIndex = 0;
+            this.btnChon.Text = "Chọn";
+            this.btnChon.UseVisualStyleBackColor = true;
+            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(425, 147);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "*Khối lượng bằng kg, và chiều cao bằng cm";
             // 
             // FormDieuKhac
             // 
@@ -383,15 +390,15 @@ namespace BTNT.Manager
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormDieuKhac";
-            this.Text = "FormDieuKhac";
+            this.Text = "Điêu khắc";
             this.Load += new System.EventHandler(this.FormDieuKhac_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.gbDSTPDK.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgDSPTDK)).EndInit();
             this.gbTPNT.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgDSTPNT)).EndInit();
             this.gbTT.ResumeLayout(false);
             this.gbTT.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDSPTDK)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDSTPNT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,9 +433,9 @@ namespace BTNT.Manager
         private System.Windows.Forms.Label lbMa;
         private System.Windows.Forms.Button btnChon;
         private System.Windows.Forms.GroupBox gbTPNT;
-        private System.Windows.Forms.Button btnChonMa;
         private System.Windows.Forms.DataGridView dgDSTPNT;
         private System.Windows.Forms.GroupBox gbDSTPDK;
         private System.Windows.Forms.DataGridView dgDSPTDK;
+        private System.Windows.Forms.Label label1;
     }
 }
