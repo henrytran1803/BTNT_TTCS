@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DoiTuong\DtBST.cs" />
+    <Compile Include="DoiTuong\DtCTL.cs" />
     <Compile Include="DoiTuong\DtDieuKhac.cs" />
     <Compile Include="DoiTuong\DtHoiHoa.cs" />
     <Compile Include="DoiTuong\DtKhac.cs" />
@@ -66,6 +67,12 @@
     </Compile>
     <Compile Include="Manager\FormBST.Designer.cs">
       <DependentUpon>FormBST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\FormCTCTL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\FormCTCTL.Designer.cs">
+      <DependentUpon>FormCTCTL.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\FormDieuKhac.cs">
       <SubType>Form</SubType>
@@ -143,6 +150,9 @@
     </Compile>
     <EmbeddedResource Include="Manager\FormBST.resx">
       <DependentUpon>FormBST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\FormCTCTL.resx">
+      <DependentUpon>FormCTCTL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\FormDieuKhac.resx">
       <DependentUpon>FormDieuKhac.cs</DependentUpon>

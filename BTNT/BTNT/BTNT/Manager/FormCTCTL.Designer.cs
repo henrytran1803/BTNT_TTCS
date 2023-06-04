@@ -1,7 +1,7 @@
 ﻿
 namespace BTNT.Manager
 {
-    partial class FormSoHuu
+    partial class FormCTCTL
     {
         /// <summary>
         /// Required designer variable.
@@ -30,23 +30,16 @@ namespace BTNT.Manager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSoHuu));
-            this.gbDSSh = new System.Windows.Forms.GroupBox();
-            this.dgDSSH = new System.Windows.Forms.DataGridView();
-            this.lbGiaTi = new System.Windows.Forms.Label();
-            this.dpNgaySoHuu = new System.Windows.Forms.DateTimePicker();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCTCTL));
+            this.dgDSCTL = new System.Windows.Forms.DataGridView();
             this.gbTT = new System.Windows.Forms.GroupBox();
-            this.tbGiaTri = new System.Windows.Forms.TextBox();
-            this.rbt2 = new System.Windows.Forms.RadioButton();
-            this.rbt1 = new System.Windows.Forms.RadioButton();
-            this.lbTT = new System.Windows.Forms.Label();
-            this.lbNgaySoHuu = new System.Windows.Forms.Label();
-            this.cbbTP = new System.Windows.Forms.ComboBox();
             this.lbTP = new System.Windows.Forms.Label();
+            this.lbBST = new System.Windows.Forms.Label();
             this.btnChon = new System.Windows.Forms.Button();
             this.gbTPNT = new System.Windows.Forms.GroupBox();
             this.dgDSTPNT = new System.Windows.Forms.DataGridView();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.gbDSCTL = new System.Windows.Forms.GroupBox();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -58,151 +51,76 @@ namespace BTNT.Manager
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gbDSSh.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDSSH)).BeginInit();
+            this.cbbCTL = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbCTL = new System.Windows.Forms.TextBox();
+            this.tbTP = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDSCTL)).BeginInit();
             this.gbTT.SuspendLayout();
             this.gbTPNT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSTPNT)).BeginInit();
+            this.gbDSCTL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // gbDSSh
+            // dgDSCTL
             // 
-            this.gbDSSh.Controls.Add(this.dgDSSH);
-            this.gbDSSh.Location = new System.Drawing.Point(0, 28);
-            this.gbDSSh.Name = "gbDSSh";
-            this.gbDSSh.Size = new System.Drawing.Size(584, 244);
-            this.gbDSSh.TabIndex = 16;
-            this.gbDSSh.TabStop = false;
-            this.gbDSSh.Text = "Danh sách sở hữu";
-            // 
-            // dgDSSH
-            // 
-            this.dgDSSH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDSSH.Location = new System.Drawing.Point(0, 23);
-            this.dgDSSH.Name = "dgDSSH";
-            this.dgDSSH.Size = new System.Drawing.Size(584, 224);
-            this.dgDSSH.TabIndex = 0;
-            this.dgDSSH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDSMuon_CellContentClick);
-            // 
-            // lbGiaTi
-            // 
-            this.lbGiaTi.AutoSize = true;
-            this.lbGiaTi.Location = new System.Drawing.Point(372, 107);
-            this.lbGiaTi.Name = "lbGiaTi";
-            this.lbGiaTi.Size = new System.Drawing.Size(39, 13);
-            this.lbGiaTi.TabIndex = 14;
-            this.lbGiaTi.Text = "Giá trị:";
-            // 
-            // dpNgaySoHuu
-            // 
-            this.dpNgaySoHuu.Location = new System.Drawing.Point(96, 101);
-            this.dpNgaySoHuu.Name = "dpNgaySoHuu";
-            this.dpNgaySoHuu.Size = new System.Drawing.Size(261, 21);
-            this.dpNgaySoHuu.TabIndex = 13;
+            this.dgDSCTL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDSCTL.Location = new System.Drawing.Point(-6, 23);
+            this.dgDSCTL.Name = "dgDSCTL";
+            this.dgDSCTL.Size = new System.Drawing.Size(590, 331);
+            this.dgDSCTL.TabIndex = 0;
             // 
             // gbTT
             // 
-            this.gbTT.Controls.Add(this.tbGiaTri);
-            this.gbTT.Controls.Add(this.rbt2);
-            this.gbTT.Controls.Add(this.rbt1);
-            this.gbTT.Controls.Add(this.lbTT);
-            this.gbTT.Controls.Add(this.lbGiaTi);
-            this.gbTT.Controls.Add(this.dpNgaySoHuu);
-            this.gbTT.Controls.Add(this.lbNgaySoHuu);
-            this.gbTT.Controls.Add(this.cbbTP);
+            this.gbTT.Controls.Add(this.tbTP);
+            this.gbTT.Controls.Add(this.tbCTL);
             this.gbTT.Controls.Add(this.lbTP);
+            this.gbTT.Controls.Add(this.lbBST);
             this.gbTT.Controls.Add(this.btnChon);
-            this.gbTT.Location = new System.Drawing.Point(0, 290);
+            this.gbTT.Location = new System.Drawing.Point(0, 411);
             this.gbTT.Name = "gbTT";
-            this.gbTT.Size = new System.Drawing.Size(870, 204);
-            this.gbTT.TabIndex = 18;
+            this.gbTT.Size = new System.Drawing.Size(870, 112);
+            this.gbTT.TabIndex = 19;
             this.gbTT.TabStop = false;
             this.gbTT.Text = "Thông tin";
-            // 
-            // tbGiaTri
-            // 
-            this.tbGiaTri.Location = new System.Drawing.Point(444, 99);
-            this.tbGiaTri.Name = "tbGiaTri";
-            this.tbGiaTri.Size = new System.Drawing.Size(261, 21);
-            this.tbGiaTri.TabIndex = 19;
-            // 
-            // rbt2
-            // 
-            this.rbt2.AutoSize = true;
-            this.rbt2.Location = new System.Drawing.Point(588, 34);
-            this.rbt2.Name = "rbt2";
-            this.rbt2.Size = new System.Drawing.Size(56, 17);
-            this.rbt2.TabIndex = 18;
-            this.rbt2.TabStop = true;
-            this.rbt2.Text = "Bảo trì";
-            this.rbt2.UseVisualStyleBackColor = true;
-            // 
-            // rbt1
-            // 
-            this.rbt1.AutoSize = true;
-            this.rbt1.Location = new System.Drawing.Point(444, 34);
-            this.rbt1.Name = "rbt1";
-            this.rbt1.Size = new System.Drawing.Size(41, 17);
-            this.rbt1.TabIndex = 17;
-            this.rbt1.TabStop = true;
-            this.rbt1.Text = "Tốt";
-            this.rbt1.UseVisualStyleBackColor = true;
-            // 
-            // lbTT
-            // 
-            this.lbTT.AutoSize = true;
-            this.lbTT.Location = new System.Drawing.Point(372, 38);
-            this.lbTT.Name = "lbTT";
-            this.lbTT.Size = new System.Drawing.Size(60, 13);
-            this.lbTT.TabIndex = 16;
-            this.lbTT.Text = "Tình trạng:";
-            // 
-            // lbNgaySoHuu
-            // 
-            this.lbNgaySoHuu.AutoSize = true;
-            this.lbNgaySoHuu.Location = new System.Drawing.Point(24, 107);
-            this.lbNgaySoHuu.Name = "lbNgaySoHuu";
-            this.lbNgaySoHuu.Size = new System.Drawing.Size(72, 13);
-            this.lbNgaySoHuu.TabIndex = 12;
-            this.lbNgaySoHuu.Text = "Ngày sở hữu:";
-            // 
-            // cbbTP
-            // 
-            this.cbbTP.FormattingEnabled = true;
-            this.cbbTP.Location = new System.Drawing.Point(96, 30);
-            this.cbbTP.Name = "cbbTP";
-            this.cbbTP.Size = new System.Drawing.Size(261, 21);
-            this.cbbTP.TabIndex = 8;
             // 
             // lbTP
             // 
             this.lbTP.AutoSize = true;
-            this.lbTP.Location = new System.Drawing.Point(24, 38);
+            this.lbTP.Location = new System.Drawing.Point(366, 43);
             this.lbTP.Name = "lbTP";
             this.lbTP.Size = new System.Drawing.Size(57, 13);
             this.lbTP.TabIndex = 3;
             this.lbTP.Text = "Tác phẩm:";
             // 
+            // lbBST
+            // 
+            this.lbBST.AutoSize = true;
+            this.lbBST.Location = new System.Drawing.Point(24, 43);
+            this.lbBST.Name = "lbBST";
+            this.lbBST.Size = new System.Drawing.Size(79, 13);
+            this.lbBST.TabIndex = 1;
+            this.lbBST.Text = "Cuộc triển lãm:";
+            // 
             // btnChon
             // 
-            this.btnChon.Location = new System.Drawing.Point(746, 35);
+            this.btnChon.Location = new System.Drawing.Point(748, 20);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(112, 157);
+            this.btnChon.Size = new System.Drawing.Size(112, 69);
             this.btnChon.TabIndex = 0;
             this.btnChon.Text = "Chọn";
             this.btnChon.UseVisualStyleBackColor = true;
-            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // gbTPNT
             // 
             this.gbTPNT.Controls.Add(this.dgDSTPNT);
-            this.gbTPNT.Location = new System.Drawing.Point(602, 31);
+            this.gbTPNT.Location = new System.Drawing.Point(603, 51);
             this.gbTPNT.Name = "gbTPNT";
-            this.gbTPNT.Size = new System.Drawing.Size(268, 244);
-            this.gbTPNT.TabIndex = 17;
+            this.gbTPNT.Size = new System.Drawing.Size(268, 354);
+            this.gbTPNT.TabIndex = 18;
             this.gbTPNT.TabStop = false;
             this.gbTPNT.Text = "Danh sách tác phẩm nghệ thuật";
             // 
@@ -211,17 +129,26 @@ namespace BTNT.Manager
             this.dgDSTPNT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDSTPNT.Location = new System.Drawing.Point(0, 20);
             this.dgDSTPNT.Name = "dgDSTPNT";
-            this.dgDSTPNT.Size = new System.Drawing.Size(268, 224);
+            this.dgDSTPNT.Size = new System.Drawing.Size(268, 334);
             this.dgDSTPNT.TabIndex = 1;
-            this.dgDSTPNT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDSTPNT_CellContentClick);
             // 
-            // barDockControlLeft
+            // gbDSCTL
             // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 45);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 429);
+            this.gbDSCTL.Controls.Add(this.dgDSCTL);
+            this.gbDSCTL.Location = new System.Drawing.Point(0, 51);
+            this.gbDSCTL.Name = "gbDSCTL";
+            this.gbDSCTL.Size = new System.Drawing.Size(584, 354);
+            this.gbDSCTL.TabIndex = 17;
+            this.gbDSCTL.TabStop = false;
+            this.gbDSCTL.Text = "Danh sách cuộc triển lãm";
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 503);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(872, 20);
             // 
             // barManager1
             // 
@@ -277,7 +204,6 @@ namespace BTNT.Manager
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
-            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnGhi
             // 
@@ -286,7 +212,6 @@ namespace BTNT.Manager
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
             this.btnGhi.Name = "btnGhi";
-            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnXoa
             // 
@@ -295,7 +220,6 @@ namespace BTNT.Manager
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnHoanTac
             // 
@@ -304,7 +228,6 @@ namespace BTNT.Manager
             this.btnHoanTac.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.ImageOptions.Image")));
             this.btnHoanTac.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.ImageOptions.LargeImage")));
             this.btnHoanTac.Name = "btnHoanTac";
-            this.btnHoanTac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoanTac_ItemClick);
             // 
             // btnReload
             // 
@@ -313,7 +236,6 @@ namespace BTNT.Manager
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
-            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnThoat
             // 
@@ -322,7 +244,6 @@ namespace BTNT.Manager
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // bar3
             // 
@@ -342,45 +263,79 @@ namespace BTNT.Manager
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(871, 45);
+            this.barDockControlTop.Size = new System.Drawing.Size(872, 45);
             // 
-            // barDockControlBottom
+            // barDockControlLeft
             // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 474);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(871, 20);
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 45);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 458);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(871, 45);
+            this.barDockControlRight.Location = new System.Drawing.Point(872, 45);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 429);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 458);
             // 
-            // FormSoHuu
+            // cbbCTL
+            // 
+            this.cbbCTL.FormattingEnabled = true;
+            this.cbbCTL.Location = new System.Drawing.Point(197, 35);
+            this.cbbCTL.Name = "cbbCTL";
+            this.cbbCTL.Size = new System.Drawing.Size(121, 21);
+            this.cbbCTL.TabIndex = 1;
+            this.cbbCTL.SelectedIndexChanged += new System.EventHandler(this.cbbCTL_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(116, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Cuộc triển lãm";
+            // 
+            // tbCTL
+            // 
+            this.tbCTL.Location = new System.Drawing.Point(109, 35);
+            this.tbCTL.Name = "tbCTL";
+            this.tbCTL.Size = new System.Drawing.Size(222, 21);
+            this.tbCTL.TabIndex = 4;
+            // 
+            // tbTP
+            // 
+            this.tbTP.Location = new System.Drawing.Point(448, 35);
+            this.tbTP.Name = "tbTP";
+            this.tbTP.Size = new System.Drawing.Size(228, 21);
+            this.tbTP.TabIndex = 5;
+            // 
+            // FormCTCTL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 494);
-            this.Controls.Add(this.gbDSSh);
+            this.ClientSize = new System.Drawing.Size(872, 523);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbbCTL);
             this.Controls.Add(this.gbTT);
             this.Controls.Add(this.gbTPNT);
+            this.Controls.Add(this.gbDSCTL);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "FormSoHuu";
-            this.Text = "Sở hữu";
-            this.Load += new System.EventHandler(this.FormSoHuu_Load);
-            this.gbDSSh.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgDSSH)).EndInit();
+            this.Name = "FormCTCTL";
+            this.Text = "FormCTCTL";
+            this.Load += new System.EventHandler(this.FormCTCTL_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgDSCTL)).EndInit();
             this.gbTT.ResumeLayout(false);
             this.gbTT.PerformLayout();
             this.gbTPNT.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgDSTPNT)).EndInit();
+            this.gbDSCTL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -389,22 +344,15 @@ namespace BTNT.Manager
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gbDSSh;
-        private System.Windows.Forms.DataGridView dgDSSH;
-        private System.Windows.Forms.Label lbGiaTi;
-        private System.Windows.Forms.DateTimePicker dpNgaySoHuu;
+        private System.Windows.Forms.DataGridView dgDSCTL;
         private System.Windows.Forms.GroupBox gbTT;
-        private System.Windows.Forms.TextBox tbGiaTri;
-        private System.Windows.Forms.RadioButton rbt2;
-        private System.Windows.Forms.RadioButton rbt1;
-        private System.Windows.Forms.Label lbTT;
-        private System.Windows.Forms.Label lbNgaySoHuu;
-        private System.Windows.Forms.ComboBox cbbTP;
         private System.Windows.Forms.Label lbTP;
+        private System.Windows.Forms.Label lbBST;
         private System.Windows.Forms.Button btnChon;
         private System.Windows.Forms.GroupBox gbTPNT;
         private System.Windows.Forms.DataGridView dgDSTPNT;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private System.Windows.Forms.GroupBox gbDSCTL;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar2;
@@ -416,7 +364,11 @@ namespace BTNT.Manager
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbbCTL;
+        private System.Windows.Forms.TextBox tbTP;
+        private System.Windows.Forms.TextBox tbCTL;
     }
 }

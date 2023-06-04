@@ -129,6 +129,7 @@ namespace BTNT.Manager
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnGhi
             // 
@@ -137,6 +138,7 @@ namespace BTNT.Manager
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnXoa
             // 
@@ -145,6 +147,7 @@ namespace BTNT.Manager
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnHoanTac
             // 
@@ -153,6 +156,7 @@ namespace BTNT.Manager
             this.btnHoanTac.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.ImageOptions.Image")));
             this.btnHoanTac.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.ImageOptions.LargeImage")));
             this.btnHoanTac.Name = "btnHoanTac";
+            this.btnHoanTac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoanTac_ItemClick);
             // 
             // btnReload
             // 
@@ -161,6 +165,7 @@ namespace BTNT.Manager
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnThoat
             // 
@@ -169,6 +174,7 @@ namespace BTNT.Manager
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // bar3
             // 
@@ -213,6 +219,7 @@ namespace BTNT.Manager
             this.dgDSTPNT.Name = "dgDSTPNT";
             this.dgDSTPNT.Size = new System.Drawing.Size(268, 224);
             this.dgDSTPNT.TabIndex = 1;
+            this.dgDSTPNT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDSTPNT_CellContentClick);
             // 
             // gbTPNT
             // 
@@ -223,6 +230,7 @@ namespace BTNT.Manager
             this.gbTPNT.TabIndex = 14;
             this.gbTPNT.TabStop = false;
             this.gbTPNT.Text = "Danh sách tác phẩm nghệ thuật";
+            this.gbTPNT.Enter += new System.EventHandler(this.gbTPNT_Enter);
             // 
             // lbNgayMuon
             // 
@@ -267,6 +275,7 @@ namespace BTNT.Manager
             this.btnChon.TabIndex = 0;
             this.btnChon.Text = "Chọn";
             this.btnChon.UseVisualStyleBackColor = true;
+            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // gbTT
             // 
@@ -324,6 +333,7 @@ namespace BTNT.Manager
             this.dgDSMuon.Name = "dgDSMuon";
             this.dgDSMuon.Size = new System.Drawing.Size(584, 224);
             this.dgDSMuon.TabIndex = 0;
+            this.dgDSMuon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDSMuon_CellContentClick);
             // 
             // gbDSMuon
             // 
@@ -349,6 +359,7 @@ namespace BTNT.Manager
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormMuon";
             this.Text = "Mượn";
+            this.Load += new System.EventHandler(this.FormMuon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSTPNT)).EndInit();
             this.gbTPNT.ResumeLayout(false);

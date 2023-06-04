@@ -9,11 +9,11 @@ namespace BTNT.DoiTuong
     class DtSoHuu
     {
         public string MaTPNT { get; set; }
-        public string NgaySoHuu { get; set; }
-        public Byte TinhTrang { get; set; }
+        public DateTime NgaySoHuu { get; set; }
+        public string TinhTrang { get; set; }
         public string GiaTri { get; set; }
 
-        public DtSoHuu(string maTPNT, string ngaySoHuu, Byte tinhTrang, string giaTri)
+        public DtSoHuu(string maTPNT, DateTime ngaySoHuu, string tinhTrang, string giaTri)
         {
             MaTPNT = maTPNT;
             NgaySoHuu = ngaySoHuu;

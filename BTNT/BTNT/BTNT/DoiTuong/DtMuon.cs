@@ -10,10 +10,10 @@ namespace BTNT.DoiTuong
     {
         public string MaBST { get; set; }
         public string MaTPNT { get; set; }
-        public string NgayMuon { get; set; }
-        public string NgayTra { get; set; }
+        public DateTime NgayMuon { get; set; }
+        public DateTime NgayTra { get; set; }
 
-        public DtMuon(string maBST, string maTPNT, string ngayMuon, string ngayTra)
+        public DtMuon(string maTPNT, string maBST, DateTime ngayMuon, DateTime ngayTra)
         {
             MaBST = maBST;
             MaTPNT = maTPNT;

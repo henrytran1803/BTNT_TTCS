@@ -222,5 +222,22 @@ namespace BTNT.View
         {
             Program.KetNoi();
         }
+
+        private void btnCTCTL_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormCTCTL));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormCTCTL form = new FormCTCTL();
+                form.MdiParent = this;
+
+                form.Show();
+
+            }
+        }
     }
 }

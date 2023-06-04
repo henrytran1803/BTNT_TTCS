@@ -59,6 +59,7 @@ namespace BTNT.View
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.btnCTCTL = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -84,9 +85,10 @@ namespace BTNT.View
             this.btnMuon,
             this.btnSoHuu,
             this.btnTacGia,
-            this.btnTrienLamNgheThuat});
+            this.btnTrienLamNgheThuat,
+            this.btnCTCTL});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 16;
+            this.ribbon.MaxItemId = 17;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -294,6 +296,7 @@ namespace BTNT.View
             // rbpgTrienLam
             // 
             this.rbpgTrienLam.ItemLinks.Add(this.btnTrienLamNgheThuat);
+            this.rbpgTrienLam.ItemLinks.Add(this.btnCTCTL);
             this.rbpgTrienLam.Name = "rbpgTrienLam";
             this.rbpgTrienLam.Text = "Triển lãm";
             // 
@@ -311,6 +314,15 @@ namespace BTNT.View
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
+            // 
+            // btnCTCTL
+            // 
+            this.btnCTCTL.Caption = "Chi tiết cuộc triển lãm";
+            this.btnCTCTL.Id = 16;
+            this.btnCTCTL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCTCTL.ImageOptions.Image")));
+            this.btnCTCTL.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCTCTL.ImageOptions.LargeImage")));
+            this.btnCTCTL.Name = "btnCTCTL";
+            this.btnCTCTL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCTCTL_ItemClick);
             // 
             // FormMain
             // 
@@ -363,5 +375,6 @@ namespace BTNT.View
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpgQLTP;
         private DevExpress.XtraBars.Ribbon.RibbonPage rbpTrienLam;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpgTrienLam;
+        private DevExpress.XtraBars.BarButtonItem btnCTCTL;
     }
 }
