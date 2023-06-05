@@ -1,0 +1,34 @@
+CREATE PROCEDURE CheckAuthorExists
+    @AuthorId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (SELECT 1 FROM TPNT WHERE MATACGIA = @AuthorId)
+        RETURN 0; -- Mã tác giả tồn tại
+    ELSE
+        RETURN 1; -- Mã tác giả không tồn tại
+END
+
+
+CREATE PROCEDURE CheckMATACGIA
+
+    @MATACGIA nchar(8)
+
+AS
+
+BEGIN
+
+    SET NOCOUNT ON;
+
+  
+
+    IF EXISTS (SELECT 1 FROM TPNT WHERE MATG = @MATACGIA)
+
+        RETURN 1;
+
+    ELSE
+
+        RETURN 0;
+
+END

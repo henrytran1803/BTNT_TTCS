@@ -1,0 +1,87 @@
+CREATE PROCEDURE ThemTacPham
+
+    @LoaiTacPham INT,
+
+    @MATPNT nchar(8)
+
+AS
+
+BEGIN
+
+    SET NOCOUNT ON;
+
+  
+
+    IF @LoaiTacPham = 1
+
+    BEGIN
+
+        -- Thêm vào bảng Hoi_HOA
+
+        INSERT INTO Hoi_HOA (MATPNT)
+
+        VALUES (@MATPNT)
+
+    END
+
+    ELSE IF @LoaiTacPham = 2
+
+    BEGIN
+
+        -- Thêm vào bảng Dieu_KHAC
+
+        INSERT INTO Dieu_KHAC (MATPNT)
+
+        VALUES (@MATPNT)
+
+    END
+
+    ELSE IF @LoaiTacPham = 3
+
+    BEGIN
+
+        -- Thêm vào bảng KHAC
+
+        INSERT INTO KHAC (MATPNT)
+
+        VALUES (@MATPNT)
+
+    END
+
+END
+
+
+
+CREATE PROCEDURE KiemTraMATPNTTonTai
+    @MATPNT nchar(8)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Kiểm tra bảng TPNT
+    IF EXISTS (SELECT 1 FROM TPNT WHERE MATPNT = @MATPNT)
+        RETURN 1;
+    ELSE
+        RETURN 0;
+END
+
+
+CREATE PROCEDURE KiemTraTPTrongTrienLam
+    @MATPNT nchar(8)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    DECLARE @NgayHienTai date = GETDATE();
+
+    -- Kiểm tra nếu tác phẩm có trong cuộc triển lãm
+    IF EXISTS (SELECT 1 
+               FROM CT_CTL
+               INNER JOIN CUOC_TRIEN_LAM ON CT_CTL.MACTL = CUOC_TRIEN_LAM.MACTL
+               WHERE CT_CTL.MATPNT = @MATPNT
+                 AND (CUOC_TRIEN_LAM.NGAYBATDAU > @NgayHienTai OR (CUOC_TRIEN_LAM.NGAYBATDAU <= @NgayHienTai AND CUOC_TRIEN_LAM.NGAYKETTHUC >= @NgayHienTai)))
+    BEGIN
+        RETURN 1;
+    END
+
+    RETURN 0;
+END

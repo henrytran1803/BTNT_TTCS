@@ -1,0 +1,41 @@
+CREATE PROCEDURE KiemTraMATPNT_Hoi_Hoa
+
+    @MATPNT nvarchar(8)
+
+AS
+
+BEGIN
+
+    SET NOCOUNT ON;
+
+    IF EXISTS (SELECT 1 FROM TPNT WHERE MATPNT = @MATPNT)
+
+    BEGIN
+
+        IF EXISTS (SELECT 1 FROM DIEU_KHAC WHERE MATPNT = @MATPNT) OR EXISTS (SELECT 1 FROM KHAC WHERE MATPNT = @MATPNT)
+
+        BEGIN
+
+            RETURN 1;
+
+        END
+
+        ELSE
+
+        BEGIN
+
+            RETURN 0;
+
+        END
+
+    END
+
+    ELSE
+
+    BEGIN
+
+        RETURN 1;
+
+    END
+
+END
