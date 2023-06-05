@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DoiTuong\DtBST.cs" />
+    <Compile Include="DoiTuong\DtCTCTL.cs" />
     <Compile Include="DoiTuong\DtCTL.cs" />
     <Compile Include="DoiTuong\DtDieuKhac.cs" />
     <Compile Include="DoiTuong\DtHoiHoa.cs" />

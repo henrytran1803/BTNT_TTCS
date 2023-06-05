@@ -28,7 +28,7 @@ namespace BTNT.View
         }
         private void ribbon_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnKhamPha_ItemClick(object sender, ItemClickEventArgs e)
@@ -217,9 +217,46 @@ namespace BTNT.View
 
             }
         }
-
+        public void nguoiDung()
+        {
+            rbpTrangChu.Visible = true;
+            rbpTPNT.Visible = false;
+            rbpTrienLam.Visible = false;
+            rbpHeThong.Visible = true;
+            btnQuyen.Caption = "Người dùng";
+        }
+        public void nhanVien()
+        {
+            rbpTrangChu.Visible = false;
+            rbpTPNT.Visible = true;
+            rbpTrienLam.Visible = true;
+            rbpHeThong.Visible = true;
+            btnQuyen.Caption = "Nhân viên";
+        }
+        public void ennable()
+        {
+            rbpTrangChu.Visible = false;
+            rbpTPNT.Visible = true;
+            rbpTrienLam.Visible = true;
+            rbpHeThong.Visible = true;
+            btnDangNhap.Enabled = false;
+            btnDangXuat.Enabled = true;
+        }
+        public void unennable()
+        {
+            btnDangNhap.Enabled = true;
+            btnDangXuat.Enabled = false;
+        }
         private void FormMain_Load(object sender, EventArgs e)
         {
+            if (Program.role == "NGUOIDUNG")
+            {
+                this.nguoiDung();
+            }
+            else if (Program.role == "NHANVIEN")
+            {
+                this.nhanVien();
+            }
             Program.KetNoi();
         }
 
@@ -235,6 +272,35 @@ namespace BTNT.View
                 FormCTCTL form = new FormCTCTL();
                 form.MdiParent = this;
 
+                form.Show();
+
+            }
+        }
+
+        private void btnDangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            unennable();
+            Program.loginName = "nd";
+            Program.loginPassword = "123456";
+            Program.role = "NGUOIDUNG";
+            FormMain_Load(sender, e);
+        }
+
+        private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnDangNhap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormLogin));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormLogin form = new FormLogin();
                 form.Show();
 
             }

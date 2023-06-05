@@ -47,7 +47,9 @@ namespace BTNT.View
             this.btnSoHuu = new DevExpress.XtraBars.BarButtonItem();
             this.btnTacGia = new DevExpress.XtraBars.BarButtonItem();
             this.btnTrienLamNgheThuat = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.btnCTCTL = new DevExpress.XtraBars.BarButtonItem();
+            this.btnQuyen = new DevExpress.XtraBars.BarButtonItem();
+            this.rbpHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbpgTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -59,7 +61,6 @@ namespace BTNT.View
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.btnCTCTL = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -86,12 +87,13 @@ namespace BTNT.View
             this.btnSoHuu,
             this.btnTacGia,
             this.btnTrienLamNgheThuat,
-            this.btnCTCTL});
+            this.btnCTCTL,
+            this.btnQuyen});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 17;
+            this.ribbon.MaxItemId = 18;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1,
+            this.rbpHeThong,
             this.rbpTrangChu,
             this.rbpTPNT,
             this.rbpTrienLam});
@@ -106,6 +108,7 @@ namespace BTNT.View
             this.btnDangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.Image")));
             this.btnDangNhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.LargeImage")));
             this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangNhap_ItemClick);
             // 
             // btnDangXuat
             // 
@@ -114,6 +117,7 @@ namespace BTNT.View
             this.btnDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.Image")));
             this.btnDangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.LargeImage")));
             this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
             // btnTaoTk
             // 
@@ -130,6 +134,7 @@ namespace BTNT.View
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // btnKhamPha
             // 
@@ -230,12 +235,27 @@ namespace BTNT.View
             this.btnTrienLamNgheThuat.Name = "btnTrienLamNgheThuat";
             this.btnTrienLamNgheThuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTrienLamNgheThuat_ItemClick);
             // 
-            // ribbonPage1
+            // btnCTCTL
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.btnCTCTL.Caption = "Chi tiết cuộc triển lãm";
+            this.btnCTCTL.Id = 16;
+            this.btnCTCTL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCTCTL.ImageOptions.Image")));
+            this.btnCTCTL.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCTCTL.ImageOptions.LargeImage")));
+            this.btnCTCTL.Name = "btnCTCTL";
+            this.btnCTCTL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCTCTL_ItemClick);
+            // 
+            // btnQuyen
+            // 
+            this.btnQuyen.Caption = "Người dùng";
+            this.btnQuyen.Id = 17;
+            this.btnQuyen.Name = "btnQuyen";
+            // 
+            // rbpHeThong
+            // 
+            this.rbpHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Hệ thống";
+            this.rbpHeThong.Name = "rbpHeThong";
+            this.rbpHeThong.Text = "Hệ thống";
             // 
             // ribbonPageGroup1
             // 
@@ -302,6 +322,7 @@ namespace BTNT.View
             // 
             // ribbonStatusBar
             // 
+            this.ribbonStatusBar.ItemLinks.Add(this.btnQuyen);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 693);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
@@ -314,15 +335,6 @@ namespace BTNT.View
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
-            // 
-            // btnCTCTL
-            // 
-            this.btnCTCTL.Caption = "Chi tiết cuộc triển lãm";
-            this.btnCTCTL.Id = 16;
-            this.btnCTCTL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCTCTL.ImageOptions.Image")));
-            this.btnCTCTL.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCTCTL.ImageOptions.LargeImage")));
-            this.btnCTCTL.Name = "btnCTCTL";
-            this.btnCTCTL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCTCTL_ItemClick);
             // 
             // FormMain
             // 
@@ -348,7 +360,7 @@ namespace BTNT.View
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbpHeThong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarButtonItem btnDangNhap;
@@ -376,5 +388,6 @@ namespace BTNT.View
         private DevExpress.XtraBars.Ribbon.RibbonPage rbpTrienLam;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpgTrienLam;
         private DevExpress.XtraBars.BarButtonItem btnCTCTL;
+        public DevExpress.XtraBars.BarButtonItem btnQuyen;
     }
 }

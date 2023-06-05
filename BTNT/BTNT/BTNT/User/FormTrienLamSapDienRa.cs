@@ -60,7 +60,7 @@ namespace BTNT.User
                 ds = new DataSet();
             }
 
-            string sqlCommand = "SELECT TP.MATPNT, TP.TENTP, CONCAT(TG.HO, ' ', TG.TEN) AS TENTACGIA, TP.NAM FROM CT_CTL CTL JOIN TPNT TP ON CTL.MATPNT = TP.MATPNT JOIN TAC_GIA TG ON TG.MATACGIA = TG.MATACGIA WHERE CTL.MACTL = '"+maCTL+"'";
+            string sqlCommand = "SELECT TP.MATPNT, TP.TENTP, CONCAT(TG.HO, ' ', TG.TEN) AS TENTACGIA, TP.NAM FROM CT_CTL CTL JOIN TPNT TP ON CTL.MATPNT = TP.MATPNT JOIN TAC_GIA TG ON TG.MATACGIA = TP.MATG WHERE CTL.MACTL = '"+maCTL+"'";
 
             DataTable dataTable = Program.ExecSqlDataTable(sqlCommand);
 

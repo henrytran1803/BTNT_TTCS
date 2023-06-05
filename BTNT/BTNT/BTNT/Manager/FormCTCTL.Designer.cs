@@ -33,6 +33,8 @@ namespace BTNT.Manager
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCTCTL));
             this.dgDSCTL = new System.Windows.Forms.DataGridView();
             this.gbTT = new System.Windows.Forms.GroupBox();
+            this.tbTP = new System.Windows.Forms.TextBox();
+            this.tbCTL = new System.Windows.Forms.TextBox();
             this.lbTP = new System.Windows.Forms.Label();
             this.lbBST = new System.Windows.Forms.Label();
             this.btnChon = new System.Windows.Forms.Button();
@@ -55,8 +57,6 @@ namespace BTNT.Manager
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.cbbCTL = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbCTL = new System.Windows.Forms.TextBox();
-            this.tbTP = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSCTL)).BeginInit();
             this.gbTT.SuspendLayout();
             this.gbTPNT.SuspendLayout();
@@ -72,6 +72,7 @@ namespace BTNT.Manager
             this.dgDSCTL.Name = "dgDSCTL";
             this.dgDSCTL.Size = new System.Drawing.Size(590, 331);
             this.dgDSCTL.TabIndex = 0;
+            this.dgDSCTL.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDSCTL_CellContentClick);
             // 
             // gbTT
             // 
@@ -86,6 +87,20 @@ namespace BTNT.Manager
             this.gbTT.TabIndex = 19;
             this.gbTT.TabStop = false;
             this.gbTT.Text = "Thông tin";
+            // 
+            // tbTP
+            // 
+            this.tbTP.Location = new System.Drawing.Point(448, 35);
+            this.tbTP.Name = "tbTP";
+            this.tbTP.Size = new System.Drawing.Size(228, 21);
+            this.tbTP.TabIndex = 5;
+            // 
+            // tbCTL
+            // 
+            this.tbCTL.Location = new System.Drawing.Point(109, 35);
+            this.tbCTL.Name = "tbCTL";
+            this.tbCTL.Size = new System.Drawing.Size(222, 21);
+            this.tbCTL.TabIndex = 4;
             // 
             // lbTP
             // 
@@ -113,6 +128,7 @@ namespace BTNT.Manager
             this.btnChon.TabIndex = 0;
             this.btnChon.Text = "Chọn";
             this.btnChon.UseVisualStyleBackColor = true;
+            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // gbTPNT
             // 
@@ -131,6 +147,7 @@ namespace BTNT.Manager
             this.dgDSTPNT.Name = "dgDSTPNT";
             this.dgDSTPNT.Size = new System.Drawing.Size(268, 334);
             this.dgDSTPNT.TabIndex = 1;
+            this.dgDSTPNT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDSTPNT_CellContentClick);
             // 
             // gbDSCTL
             // 
@@ -188,7 +205,6 @@ namespace BTNT.Manager
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHoanTac, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -204,6 +220,7 @@ namespace BTNT.Manager
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnGhi
             // 
@@ -212,6 +229,7 @@ namespace BTNT.Manager
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnXoa
             // 
@@ -220,6 +238,7 @@ namespace BTNT.Manager
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnHoanTac
             // 
@@ -228,6 +247,7 @@ namespace BTNT.Manager
             this.btnHoanTac.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.ImageOptions.Image")));
             this.btnHoanTac.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.ImageOptions.LargeImage")));
             this.btnHoanTac.Name = "btnHoanTac";
+            this.btnHoanTac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoanTac_ItemClick);
             // 
             // btnReload
             // 
@@ -236,6 +256,7 @@ namespace BTNT.Manager
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnThoat
             // 
@@ -244,6 +265,7 @@ namespace BTNT.Manager
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // bar3
             // 
@@ -298,20 +320,6 @@ namespace BTNT.Manager
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cuộc triển lãm";
-            // 
-            // tbCTL
-            // 
-            this.tbCTL.Location = new System.Drawing.Point(109, 35);
-            this.tbCTL.Name = "tbCTL";
-            this.tbCTL.Size = new System.Drawing.Size(222, 21);
-            this.tbCTL.TabIndex = 4;
-            // 
-            // tbTP
-            // 
-            this.tbTP.Location = new System.Drawing.Point(448, 35);
-            this.tbTP.Name = "tbTP";
-            this.tbTP.Size = new System.Drawing.Size(228, 21);
-            this.tbTP.TabIndex = 5;
             // 
             // FormCTCTL
             // 

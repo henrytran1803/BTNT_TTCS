@@ -28,14 +28,9 @@ namespace BTNT
         public static String serverNameLeft = "";
         public static String userName = "";//username
 
-        public static String loginName = "sa";//mlogin
-        public static String loginPassword = "18032002";//password
+        public static String loginName = "nd";//mlogin
+        public static String loginPassword = "123456";//password
 
-
-
-
-        public static String remoteLogin = "HTKN";//remotelogin
-        public static String remotePassword = "123456";//remotepassword
 
         public static String currentLogin = "";//mloginDN
         public static String currentPassword = "";//passwordDN
@@ -49,7 +44,7 @@ namespace BTNT
          * staff: tên nhân viên đang đăng nhập
          * brand: chi nhánh đang đăng nhập
          **********************************************/
-        public static String role = "";// mGroup
+        public static String role = "NGUOIDUNG";// mGroup
         public static String staff = "";//mHoten
         public static int brand = 0;//mChiNhanh
 
