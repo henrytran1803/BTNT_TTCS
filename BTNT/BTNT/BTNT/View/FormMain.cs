@@ -224,6 +224,8 @@ namespace BTNT.View
             rbpTrienLam.Visible = false;
             rbpHeThong.Visible = true;
             btnQuyen.Caption = "Người dùng";
+            btnTaoTk.Enabled = false;
+            btnDangXuat.Enabled = false;
         }
         public void nhanVien()
         {
@@ -232,6 +234,7 @@ namespace BTNT.View
             rbpTrienLam.Visible = true;
             rbpHeThong.Visible = true;
             btnQuyen.Caption = "Nhân viên";
+            btnTaoTk.Enabled = false;
         }
         public void ennable()
         {
@@ -241,6 +244,7 @@ namespace BTNT.View
             rbpHeThong.Visible = true;
             btnDangNhap.Enabled = false;
             btnDangXuat.Enabled = true;
+            btnTaoTk.Enabled = false;
         }
         public void unennable()
         {

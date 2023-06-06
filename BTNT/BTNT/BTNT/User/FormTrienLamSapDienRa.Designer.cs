@@ -32,24 +32,24 @@ namespace BTNT.User
             this.gbDSTrienLam = new System.Windows.Forms.GroupBox();
             this.dgDSTrienLam = new System.Windows.Forms.DataGridView();
             this.gbThongTin = new System.Windows.Forms.GroupBox();
+            this.lbNNam = new System.Windows.Forms.Label();
+            this.lbNam = new System.Windows.Forms.Label();
+            this.lbNTenTacGia = new System.Windows.Forms.Label();
+            this.lbTenTacGia = new System.Windows.Forms.Label();
+            this.lbNTenTP = new System.Windows.Forms.Label();
+            this.lbTenTP = new System.Windows.Forms.Label();
+            this.lbNMaTP = new System.Windows.Forms.Label();
+            this.lbMaTP = new System.Windows.Forms.Label();
+            this.lbNNgayKetThuc = new System.Windows.Forms.Label();
+            this.labellbNgayKetThuc7 = new System.Windows.Forms.Label();
+            this.lbNhapNgayBatDau = new System.Windows.Forms.Label();
+            this.lbNgayBatDau = new System.Windows.Forms.Label();
+            this.lbNTenCTL = new System.Windows.Forms.Label();
+            this.lbTenCTL = new System.Windows.Forms.Label();
+            this.lbNMaCTL = new System.Windows.Forms.Label();
+            this.lbMaCTL = new System.Windows.Forms.Label();
             this.gbDSTacPham = new System.Windows.Forms.GroupBox();
             this.dgDSTacPham = new System.Windows.Forms.DataGridView();
-            this.lbMaCTL = new System.Windows.Forms.Label();
-            this.lbNMaCTL = new System.Windows.Forms.Label();
-            this.lbTenCTL = new System.Windows.Forms.Label();
-            this.lbNTenCTL = new System.Windows.Forms.Label();
-            this.lbNgayBatDau = new System.Windows.Forms.Label();
-            this.lbNhapNgayBatDau = new System.Windows.Forms.Label();
-            this.labellbNgayKetThuc7 = new System.Windows.Forms.Label();
-            this.lbNNgayKetThuc = new System.Windows.Forms.Label();
-            this.lbMaTP = new System.Windows.Forms.Label();
-            this.lbNMaTP = new System.Windows.Forms.Label();
-            this.lbTenTP = new System.Windows.Forms.Label();
-            this.lbNTenTP = new System.Windows.Forms.Label();
-            this.lbTenTacGia = new System.Windows.Forms.Label();
-            this.lbNTenTacGia = new System.Windows.Forms.Label();
-            this.lbNam = new System.Windows.Forms.Label();
-            this.lbNNam = new System.Windows.Forms.Label();
             this.gbDSTrienLam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSTrienLam)).BeginInit();
             this.gbThongTin.SuspendLayout();
@@ -101,6 +101,142 @@ namespace BTNT.User
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Thông tin";
             // 
+            // lbNNam
+            // 
+            this.lbNNam.AutoSize = true;
+            this.lbNNam.Location = new System.Drawing.Point(160, 348);
+            this.lbNNam.Name = "lbNNam";
+            this.lbNNam.Size = new System.Drawing.Size(0, 13);
+            this.lbNNam.TabIndex = 15;
+            // 
+            // lbNam
+            // 
+            this.lbNam.AutoSize = true;
+            this.lbNam.Location = new System.Drawing.Point(42, 348);
+            this.lbNam.Name = "lbNam";
+            this.lbNam.Size = new System.Drawing.Size(28, 13);
+            this.lbNam.TabIndex = 14;
+            this.lbNam.Text = "Năm";
+            // 
+            // lbNTenTacGia
+            // 
+            this.lbNTenTacGia.AutoSize = true;
+            this.lbNTenTacGia.Location = new System.Drawing.Point(160, 315);
+            this.lbNTenTacGia.Name = "lbNTenTacGia";
+            this.lbNTenTacGia.Size = new System.Drawing.Size(0, 13);
+            this.lbNTenTacGia.TabIndex = 13;
+            // 
+            // lbTenTacGia
+            // 
+            this.lbTenTacGia.AutoSize = true;
+            this.lbTenTacGia.Location = new System.Drawing.Point(42, 315);
+            this.lbTenTacGia.Name = "lbTenTacGia";
+            this.lbTenTacGia.Size = new System.Drawing.Size(60, 13);
+            this.lbTenTacGia.TabIndex = 12;
+            this.lbTenTacGia.Text = "Tên tác giả";
+            // 
+            // lbNTenTP
+            // 
+            this.lbNTenTP.AutoSize = true;
+            this.lbNTenTP.Location = new System.Drawing.Point(160, 269);
+            this.lbNTenTP.Name = "lbNTenTP";
+            this.lbNTenTP.Size = new System.Drawing.Size(0, 13);
+            this.lbNTenTP.TabIndex = 11;
+            // 
+            // lbTenTP
+            // 
+            this.lbTenTP.AutoSize = true;
+            this.lbTenTP.Location = new System.Drawing.Point(42, 269);
+            this.lbTenTP.Name = "lbTenTP";
+            this.lbTenTP.Size = new System.Drawing.Size(72, 13);
+            this.lbTenTP.TabIndex = 10;
+            this.lbTenTP.Text = "Tên tác phẩm";
+            // 
+            // lbNMaTP
+            // 
+            this.lbNMaTP.AutoSize = true;
+            this.lbNMaTP.Location = new System.Drawing.Point(160, 221);
+            this.lbNMaTP.Name = "lbNMaTP";
+            this.lbNMaTP.Size = new System.Drawing.Size(0, 13);
+            this.lbNMaTP.TabIndex = 9;
+            // 
+            // lbMaTP
+            // 
+            this.lbMaTP.AutoSize = true;
+            this.lbMaTP.Location = new System.Drawing.Point(42, 221);
+            this.lbMaTP.Name = "lbMaTP";
+            this.lbMaTP.Size = new System.Drawing.Size(68, 13);
+            this.lbMaTP.TabIndex = 8;
+            this.lbMaTP.Text = "Mã tác phẩm";
+            // 
+            // lbNNgayKetThuc
+            // 
+            this.lbNNgayKetThuc.AutoSize = true;
+            this.lbNNgayKetThuc.Location = new System.Drawing.Point(160, 177);
+            this.lbNNgayKetThuc.Name = "lbNNgayKetThuc";
+            this.lbNNgayKetThuc.Size = new System.Drawing.Size(0, 13);
+            this.lbNNgayKetThuc.TabIndex = 7;
+            // 
+            // labellbNgayKetThuc7
+            // 
+            this.labellbNgayKetThuc7.AutoSize = true;
+            this.labellbNgayKetThuc7.Location = new System.Drawing.Point(42, 177);
+            this.labellbNgayKetThuc7.Name = "labellbNgayKetThuc7";
+            this.labellbNgayKetThuc7.Size = new System.Drawing.Size(74, 13);
+            this.labellbNgayKetThuc7.TabIndex = 6;
+            this.labellbNgayKetThuc7.Text = "Ngày kết thúc";
+            // 
+            // lbNhapNgayBatDau
+            // 
+            this.lbNhapNgayBatDau.AutoSize = true;
+            this.lbNhapNgayBatDau.Location = new System.Drawing.Point(160, 125);
+            this.lbNhapNgayBatDau.Name = "lbNhapNgayBatDau";
+            this.lbNhapNgayBatDau.Size = new System.Drawing.Size(0, 13);
+            this.lbNhapNgayBatDau.TabIndex = 5;
+            // 
+            // lbNgayBatDau
+            // 
+            this.lbNgayBatDau.AutoSize = true;
+            this.lbNgayBatDau.Location = new System.Drawing.Point(42, 125);
+            this.lbNgayBatDau.Name = "lbNgayBatDau";
+            this.lbNgayBatDau.Size = new System.Drawing.Size(72, 13);
+            this.lbNgayBatDau.TabIndex = 4;
+            this.lbNgayBatDau.Text = "Ngày bắt đầu";
+            // 
+            // lbNTenCTL
+            // 
+            this.lbNTenCTL.AutoSize = true;
+            this.lbNTenCTL.Location = new System.Drawing.Point(160, 79);
+            this.lbNTenCTL.Name = "lbNTenCTL";
+            this.lbNTenCTL.Size = new System.Drawing.Size(0, 13);
+            this.lbNTenCTL.TabIndex = 3;
+            // 
+            // lbTenCTL
+            // 
+            this.lbTenCTL.AutoSize = true;
+            this.lbTenCTL.Location = new System.Drawing.Point(42, 79);
+            this.lbTenCTL.Name = "lbTenCTL";
+            this.lbTenCTL.Size = new System.Drawing.Size(94, 13);
+            this.lbTenCTL.TabIndex = 2;
+            this.lbTenCTL.Text = "Tên cuộc triển lãm";
+            // 
+            // lbNMaCTL
+            // 
+            this.lbNMaCTL.AutoSize = true;
+            this.lbNMaCTL.Location = new System.Drawing.Point(160, 34);
+            this.lbNMaCTL.Name = "lbNMaCTL";
+            this.lbNMaCTL.Size = new System.Drawing.Size(0, 13);
+            this.lbNMaCTL.TabIndex = 1;
+            // 
+            // lbMaCTL
+            // 
+            this.lbMaCTL.AutoSize = true;
+            this.lbMaCTL.Location = new System.Drawing.Point(42, 34);
+            this.lbMaCTL.Name = "lbMaCTL";
+            this.lbMaCTL.Size = new System.Drawing.Size(90, 13);
+            this.lbMaCTL.TabIndex = 0;
+            this.lbMaCTL.Text = "Mã cuộc triển lãm";
+            // 
             // gbDSTacPham
             // 
             this.gbDSTacPham.Controls.Add(this.dgDSTacPham);
@@ -119,150 +255,6 @@ namespace BTNT.User
             this.dgDSTacPham.Size = new System.Drawing.Size(382, 209);
             this.dgDSTacPham.TabIndex = 1;
             this.dgDSTacPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDSTacPham_CellContentClick);
-            // 
-            // lbMaCTL
-            // 
-            this.lbMaCTL.AutoSize = true;
-            this.lbMaCTL.Location = new System.Drawing.Point(42, 34);
-            this.lbMaCTL.Name = "lbMaCTL";
-            this.lbMaCTL.Size = new System.Drawing.Size(90, 13);
-            this.lbMaCTL.TabIndex = 0;
-            this.lbMaCTL.Text = "Mã cuộc triển lãm";
-            // 
-            // lbNMaCTL
-            // 
-            this.lbNMaCTL.AutoSize = true;
-            this.lbNMaCTL.Location = new System.Drawing.Point(160, 34);
-            this.lbNMaCTL.Name = "lbNMaCTL";
-            this.lbNMaCTL.Size = new System.Drawing.Size(35, 13);
-            this.lbNMaCTL.TabIndex = 1;
-            this.lbNMaCTL.Text = "label2";
-            // 
-            // lbTenCTL
-            // 
-            this.lbTenCTL.AutoSize = true;
-            this.lbTenCTL.Location = new System.Drawing.Point(42, 79);
-            this.lbTenCTL.Name = "lbTenCTL";
-            this.lbTenCTL.Size = new System.Drawing.Size(94, 13);
-            this.lbTenCTL.TabIndex = 2;
-            this.lbTenCTL.Text = "Tên cuộc triển lãm";
-            // 
-            // lbNTenCTL
-            // 
-            this.lbNTenCTL.AutoSize = true;
-            this.lbNTenCTL.Location = new System.Drawing.Point(160, 79);
-            this.lbNTenCTL.Name = "lbNTenCTL";
-            this.lbNTenCTL.Size = new System.Drawing.Size(35, 13);
-            this.lbNTenCTL.TabIndex = 3;
-            this.lbNTenCTL.Text = "label4";
-            // 
-            // lbNgayBatDau
-            // 
-            this.lbNgayBatDau.AutoSize = true;
-            this.lbNgayBatDau.Location = new System.Drawing.Point(42, 125);
-            this.lbNgayBatDau.Name = "lbNgayBatDau";
-            this.lbNgayBatDau.Size = new System.Drawing.Size(72, 13);
-            this.lbNgayBatDau.TabIndex = 4;
-            this.lbNgayBatDau.Text = "Ngày bắt đầu";
-            // 
-            // lbNhapNgayBatDau
-            // 
-            this.lbNhapNgayBatDau.AutoSize = true;
-            this.lbNhapNgayBatDau.Location = new System.Drawing.Point(160, 125);
-            this.lbNhapNgayBatDau.Name = "lbNhapNgayBatDau";
-            this.lbNhapNgayBatDau.Size = new System.Drawing.Size(35, 13);
-            this.lbNhapNgayBatDau.TabIndex = 5;
-            this.lbNhapNgayBatDau.Text = "label6";
-            // 
-            // labellbNgayKetThuc7
-            // 
-            this.labellbNgayKetThuc7.AutoSize = true;
-            this.labellbNgayKetThuc7.Location = new System.Drawing.Point(42, 177);
-            this.labellbNgayKetThuc7.Name = "labellbNgayKetThuc7";
-            this.labellbNgayKetThuc7.Size = new System.Drawing.Size(74, 13);
-            this.labellbNgayKetThuc7.TabIndex = 6;
-            this.labellbNgayKetThuc7.Text = "Ngày kết thúc";
-            // 
-            // lbNNgayKetThuc
-            // 
-            this.lbNNgayKetThuc.AutoSize = true;
-            this.lbNNgayKetThuc.Location = new System.Drawing.Point(160, 177);
-            this.lbNNgayKetThuc.Name = "lbNNgayKetThuc";
-            this.lbNNgayKetThuc.Size = new System.Drawing.Size(35, 13);
-            this.lbNNgayKetThuc.TabIndex = 7;
-            this.lbNNgayKetThuc.Text = "label8";
-            // 
-            // lbMaTP
-            // 
-            this.lbMaTP.AutoSize = true;
-            this.lbMaTP.Location = new System.Drawing.Point(42, 221);
-            this.lbMaTP.Name = "lbMaTP";
-            this.lbMaTP.Size = new System.Drawing.Size(68, 13);
-            this.lbMaTP.TabIndex = 8;
-            this.lbMaTP.Text = "Mã tác phẩm";
-            // 
-            // lbNMaTP
-            // 
-            this.lbNMaTP.AutoSize = true;
-            this.lbNMaTP.Location = new System.Drawing.Point(160, 221);
-            this.lbNMaTP.Name = "lbNMaTP";
-            this.lbNMaTP.Size = new System.Drawing.Size(41, 13);
-            this.lbNMaTP.TabIndex = 9;
-            this.lbNMaTP.Text = "label10";
-            // 
-            // lbTenTP
-            // 
-            this.lbTenTP.AutoSize = true;
-            this.lbTenTP.Location = new System.Drawing.Point(42, 269);
-            this.lbTenTP.Name = "lbTenTP";
-            this.lbTenTP.Size = new System.Drawing.Size(72, 13);
-            this.lbTenTP.TabIndex = 10;
-            this.lbTenTP.Text = "Tên tác phẩm";
-            // 
-            // lbNTenTP
-            // 
-            this.lbNTenTP.AutoSize = true;
-            this.lbNTenTP.Location = new System.Drawing.Point(160, 269);
-            this.lbNTenTP.Name = "lbNTenTP";
-            this.lbNTenTP.Size = new System.Drawing.Size(41, 13);
-            this.lbNTenTP.TabIndex = 11;
-            this.lbNTenTP.Text = "label12";
-            // 
-            // lbTenTacGia
-            // 
-            this.lbTenTacGia.AutoSize = true;
-            this.lbTenTacGia.Location = new System.Drawing.Point(42, 315);
-            this.lbTenTacGia.Name = "lbTenTacGia";
-            this.lbTenTacGia.Size = new System.Drawing.Size(60, 13);
-            this.lbTenTacGia.TabIndex = 12;
-            this.lbTenTacGia.Text = "Tên tác giả";
-            // 
-            // lbNTenTacGia
-            // 
-            this.lbNTenTacGia.AutoSize = true;
-            this.lbNTenTacGia.Location = new System.Drawing.Point(160, 315);
-            this.lbNTenTacGia.Name = "lbNTenTacGia";
-            this.lbNTenTacGia.Size = new System.Drawing.Size(41, 13);
-            this.lbNTenTacGia.TabIndex = 13;
-            this.lbNTenTacGia.Text = "label14";
-            // 
-            // lbNam
-            // 
-            this.lbNam.AutoSize = true;
-            this.lbNam.Location = new System.Drawing.Point(42, 348);
-            this.lbNam.Name = "lbNam";
-            this.lbNam.Size = new System.Drawing.Size(28, 13);
-            this.lbNam.TabIndex = 14;
-            this.lbNam.Text = "Năm";
-            // 
-            // lbNNam
-            // 
-            this.lbNNam.AutoSize = true;
-            this.lbNNam.Location = new System.Drawing.Point(160, 348);
-            this.lbNNam.Name = "lbNNam";
-            this.lbNNam.Size = new System.Drawing.Size(41, 13);
-            this.lbNNam.TabIndex = 15;
-            this.lbNNam.Text = "label14";
             // 
             // FormTrienLamSapDienRa
             // 

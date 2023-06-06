@@ -39,6 +39,7 @@ namespace BTNT.Manager
             this.lbCL = new System.Windows.Forms.Label();
             this.lbMa = new System.Windows.Forms.Label();
             this.gbTT = new System.Windows.Forms.GroupBox();
+            this.cbbTruongPhai = new System.Windows.Forms.ComboBox();
             this.btnChon = new System.Windows.Forms.Button();
             this.dgDSTPNT = new System.Windows.Forms.DataGridView();
             this.gbTPNT = new System.Windows.Forms.GroupBox();
@@ -58,7 +59,6 @@ namespace BTNT.Manager
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gbDSTPHH = new System.Windows.Forms.GroupBox();
-            this.cbbTruongPhai = new System.Windows.Forms.ComboBox();
             this.gbTT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSTPNT)).BeginInit();
             this.gbTPNT.SuspendLayout();
@@ -144,6 +144,14 @@ namespace BTNT.Manager
             this.gbTT.TabIndex = 9;
             this.gbTT.TabStop = false;
             this.gbTT.Text = "Thông tin";
+            // 
+            // cbbTruongPhai
+            // 
+            this.cbbTruongPhai.FormattingEnabled = true;
+            this.cbbTruongPhai.Location = new System.Drawing.Point(444, 92);
+            this.cbbTruongPhai.Name = "cbbTruongPhai";
+            this.cbbTruongPhai.Size = new System.Drawing.Size(261, 21);
+            this.cbbTruongPhai.TabIndex = 11;
             // 
             // btnChon
             // 
@@ -338,14 +346,6 @@ namespace BTNT.Manager
             this.gbDSTPHH.TabStop = false;
             this.gbDSTPHH.Text = "Danh sách tác phẩm hội hoạ";
             // 
-            // cbbTruongPhai
-            // 
-            this.cbbTruongPhai.FormattingEnabled = true;
-            this.cbbTruongPhai.Location = new System.Drawing.Point(444, 92);
-            this.cbbTruongPhai.Name = "cbbTruongPhai";
-            this.cbbTruongPhai.Size = new System.Drawing.Size(261, 21);
-            this.cbbTruongPhai.TabIndex = 11;
-            // 
             // FormHoiHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,7 +359,7 @@ namespace BTNT.Manager
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormHoiHoa";
-            this.Text = "FormHoiHoa";
+            this.Text = "Tác phẩm hội hoạ";
             this.Load += new System.EventHandler(this.FormHoiHoa_Load);
             this.gbTT.ResumeLayout(false);
             this.gbTT.PerformLayout();

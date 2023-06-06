@@ -46,29 +46,29 @@ namespace BTNT.Manager
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gbDSTPNT = new System.Windows.Forms.GroupBox();
-            this.gbThongTin = new System.Windows.Forms.GroupBox();
             this.dgDSTPNT = new System.Windows.Forms.DataGridView();
-            this.lbMa = new System.Windows.Forms.Label();
-            this.lbNam = new System.Windows.Forms.Label();
-            this.lbCD = new System.Windows.Forms.Label();
-            this.lbTen = new System.Windows.Forms.Label();
-            this.lbTacGia = new System.Windows.Forms.Label();
-            this.lbTD = new System.Windows.Forms.Label();
-            this.lbQT = new System.Windows.Forms.Label();
-            this.tbMa = new System.Windows.Forms.TextBox();
-            this.tbTen = new System.Windows.Forms.TextBox();
-            this.cbbTacGia = new System.Windows.Forms.ComboBox();
-            this.cbbTD = new System.Windows.Forms.ComboBox();
-            this.cbbQT = new System.Windows.Forms.ComboBox();
-            this.cbbCD = new System.Windows.Forms.ComboBox();
-            this.tbNam = new System.Windows.Forms.TextBox();
-            this.btnChon = new System.Windows.Forms.Button();
-            this.lbDienGiai = new System.Windows.Forms.Label();
+            this.gbThongTin = new System.Windows.Forms.GroupBox();
             this.tbDienGiai = new System.Windows.Forms.TextBox();
+            this.lbDienGiai = new System.Windows.Forms.Label();
+            this.btnChon = new System.Windows.Forms.Button();
+            this.tbNam = new System.Windows.Forms.TextBox();
+            this.cbbCD = new System.Windows.Forms.ComboBox();
+            this.cbbQT = new System.Windows.Forms.ComboBox();
+            this.cbbTD = new System.Windows.Forms.ComboBox();
+            this.cbbTacGia = new System.Windows.Forms.ComboBox();
+            this.tbTen = new System.Windows.Forms.TextBox();
+            this.tbMa = new System.Windows.Forms.TextBox();
+            this.lbQT = new System.Windows.Forms.Label();
+            this.lbTD = new System.Windows.Forms.Label();
+            this.lbTacGia = new System.Windows.Forms.Label();
+            this.lbTen = new System.Windows.Forms.Label();
+            this.lbCD = new System.Windows.Forms.Label();
+            this.lbNam = new System.Windows.Forms.Label();
+            this.lbMa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.gbDSTPNT.SuspendLayout();
-            this.gbThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSTPNT)).BeginInit();
+            this.gbThongTin.SuspendLayout();
             this.SuspendLayout();
             // 
             // barManager1
@@ -226,6 +226,15 @@ namespace BTNT.Manager
             this.gbDSTPNT.TabStop = false;
             this.gbDSTPNT.Text = "Tẩm phẩm nghệ thuật";
             // 
+            // dgDSTPNT
+            // 
+            this.dgDSTPNT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDSTPNT.Location = new System.Drawing.Point(0, 20);
+            this.dgDSTPNT.Name = "dgDSTPNT";
+            this.dgDSTPNT.Size = new System.Drawing.Size(775, 200);
+            this.dgDSTPNT.TabIndex = 0;
+            this.dgDSTPNT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDSTPNT_CellContentClick);
+            // 
             // gbThongTin
             // 
             this.gbThongTin.Controls.Add(this.tbDienGiai);
@@ -252,131 +261,21 @@ namespace BTNT.Manager
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Thông tin";
             // 
-            // dgDSTPNT
+            // tbDienGiai
             // 
-            this.dgDSTPNT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDSTPNT.Location = new System.Drawing.Point(0, 20);
-            this.dgDSTPNT.Name = "dgDSTPNT";
-            this.dgDSTPNT.Size = new System.Drawing.Size(775, 200);
-            this.dgDSTPNT.TabIndex = 0;
-            this.dgDSTPNT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDSTPNT_CellContentClick);
+            this.tbDienGiai.Location = new System.Drawing.Point(327, 108);
+            this.tbDienGiai.Name = "tbDienGiai";
+            this.tbDienGiai.Size = new System.Drawing.Size(151, 21);
+            this.tbDienGiai.TabIndex = 16;
             // 
-            // lbMa
+            // lbDienGiai
             // 
-            this.lbMa.AutoSize = true;
-            this.lbMa.Location = new System.Drawing.Point(22, 34);
-            this.lbMa.Name = "lbMa";
-            this.lbMa.Size = new System.Drawing.Size(25, 13);
-            this.lbMa.TabIndex = 0;
-            this.lbMa.Text = "Mã:";
-            // 
-            // lbNam
-            // 
-            this.lbNam.AutoSize = true;
-            this.lbNam.Location = new System.Drawing.Point(22, 74);
-            this.lbNam.Name = "lbNam";
-            this.lbNam.Size = new System.Drawing.Size(32, 13);
-            this.lbNam.TabIndex = 1;
-            this.lbNam.Text = "Năm:";
-            // 
-            // lbCD
-            // 
-            this.lbCD.AutoSize = true;
-            this.lbCD.Location = new System.Drawing.Point(22, 116);
-            this.lbCD.Name = "lbCD";
-            this.lbCD.Size = new System.Drawing.Size(45, 13);
-            this.lbCD.TabIndex = 2;
-            this.lbCD.Text = "Chủ đề:";
-            // 
-            // lbTen
-            // 
-            this.lbTen.AutoSize = true;
-            this.lbTen.Location = new System.Drawing.Point(264, 34);
-            this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(29, 13);
-            this.lbTen.TabIndex = 3;
-            this.lbTen.Text = "Tên:";
-            // 
-            // lbTacGia
-            // 
-            this.lbTacGia.AutoSize = true;
-            this.lbTacGia.Location = new System.Drawing.Point(484, 34);
-            this.lbTacGia.Name = "lbTacGia";
-            this.lbTacGia.Size = new System.Drawing.Size(45, 13);
-            this.lbTacGia.TabIndex = 4;
-            this.lbTacGia.Text = "Tác giả:";
-            // 
-            // lbTD
-            // 
-            this.lbTD.AutoSize = true;
-            this.lbTD.Location = new System.Drawing.Point(264, 74);
-            this.lbTD.Name = "lbTD";
-            this.lbTD.Size = new System.Drawing.Size(48, 13);
-            this.lbTD.TabIndex = 5;
-            this.lbTD.Text = "Thời đại:";
-            // 
-            // lbQT
-            // 
-            this.lbQT.AutoSize = true;
-            this.lbQT.Location = new System.Drawing.Point(484, 74);
-            this.lbQT.Name = "lbQT";
-            this.lbQT.Size = new System.Drawing.Size(53, 13);
-            this.lbQT.TabIndex = 6;
-            this.lbQT.Text = "Quốc gia:";
-            // 
-            // tbMa
-            // 
-            this.tbMa.Location = new System.Drawing.Point(82, 26);
-            this.tbMa.Name = "tbMa";
-            this.tbMa.Size = new System.Drawing.Size(176, 21);
-            this.tbMa.TabIndex = 7;
-            // 
-            // tbTen
-            // 
-            this.tbTen.Location = new System.Drawing.Point(327, 26);
-            this.tbTen.Name = "tbTen";
-            this.tbTen.Size = new System.Drawing.Size(151, 21);
-            this.tbTen.TabIndex = 8;
-            // 
-            // cbbTacGia
-            // 
-            this.cbbTacGia.FormattingEnabled = true;
-            this.cbbTacGia.Location = new System.Drawing.Point(541, 26);
-            this.cbbTacGia.Name = "cbbTacGia";
-            this.cbbTacGia.Size = new System.Drawing.Size(151, 21);
-            this.cbbTacGia.TabIndex = 9;
-            // 
-            // cbbTD
-            // 
-            this.cbbTD.FormattingEnabled = true;
-            this.cbbTD.Location = new System.Drawing.Point(327, 66);
-            this.cbbTD.Name = "cbbTD";
-            this.cbbTD.Size = new System.Drawing.Size(151, 21);
-            this.cbbTD.TabIndex = 10;
-            this.cbbTD.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // cbbQT
-            // 
-            this.cbbQT.FormattingEnabled = true;
-            this.cbbQT.Location = new System.Drawing.Point(543, 66);
-            this.cbbQT.Name = "cbbQT";
-            this.cbbQT.Size = new System.Drawing.Size(151, 21);
-            this.cbbQT.TabIndex = 11;
-            // 
-            // cbbCD
-            // 
-            this.cbbCD.FormattingEnabled = true;
-            this.cbbCD.Location = new System.Drawing.Point(82, 108);
-            this.cbbCD.Name = "cbbCD";
-            this.cbbCD.Size = new System.Drawing.Size(176, 21);
-            this.cbbCD.TabIndex = 12;
-            // 
-            // tbNam
-            // 
-            this.tbNam.Location = new System.Drawing.Point(82, 66);
-            this.tbNam.Name = "tbNam";
-            this.tbNam.Size = new System.Drawing.Size(176, 21);
-            this.tbNam.TabIndex = 13;
+            this.lbDienGiai.AutoSize = true;
+            this.lbDienGiai.Location = new System.Drawing.Point(264, 116);
+            this.lbDienGiai.Name = "lbDienGiai";
+            this.lbDienGiai.Size = new System.Drawing.Size(51, 13);
+            this.lbDienGiai.TabIndex = 15;
+            this.lbDienGiai.Text = "Diễn giải:";
             // 
             // btnChon
             // 
@@ -388,21 +287,122 @@ namespace BTNT.Manager
             this.btnChon.UseVisualStyleBackColor = true;
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
-            // lbDienGiai
+            // tbNam
             // 
-            this.lbDienGiai.AutoSize = true;
-            this.lbDienGiai.Location = new System.Drawing.Point(264, 116);
-            this.lbDienGiai.Name = "lbDienGiai";
-            this.lbDienGiai.Size = new System.Drawing.Size(51, 13);
-            this.lbDienGiai.TabIndex = 15;
-            this.lbDienGiai.Text = "Diễn giải:";
+            this.tbNam.Location = new System.Drawing.Point(82, 66);
+            this.tbNam.Name = "tbNam";
+            this.tbNam.Size = new System.Drawing.Size(176, 21);
+            this.tbNam.TabIndex = 13;
             // 
-            // tbDienGiai
+            // cbbCD
             // 
-            this.tbDienGiai.Location = new System.Drawing.Point(327, 108);
-            this.tbDienGiai.Name = "tbDienGiai";
-            this.tbDienGiai.Size = new System.Drawing.Size(151, 21);
-            this.tbDienGiai.TabIndex = 16;
+            this.cbbCD.FormattingEnabled = true;
+            this.cbbCD.Location = new System.Drawing.Point(82, 108);
+            this.cbbCD.Name = "cbbCD";
+            this.cbbCD.Size = new System.Drawing.Size(176, 21);
+            this.cbbCD.TabIndex = 12;
+            // 
+            // cbbQT
+            // 
+            this.cbbQT.FormattingEnabled = true;
+            this.cbbQT.Location = new System.Drawing.Point(543, 66);
+            this.cbbQT.Name = "cbbQT";
+            this.cbbQT.Size = new System.Drawing.Size(151, 21);
+            this.cbbQT.TabIndex = 11;
+            // 
+            // cbbTD
+            // 
+            this.cbbTD.FormattingEnabled = true;
+            this.cbbTD.Location = new System.Drawing.Point(327, 66);
+            this.cbbTD.Name = "cbbTD";
+            this.cbbTD.Size = new System.Drawing.Size(151, 21);
+            this.cbbTD.TabIndex = 10;
+            this.cbbTD.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // cbbTacGia
+            // 
+            this.cbbTacGia.FormattingEnabled = true;
+            this.cbbTacGia.Location = new System.Drawing.Point(541, 26);
+            this.cbbTacGia.Name = "cbbTacGia";
+            this.cbbTacGia.Size = new System.Drawing.Size(151, 21);
+            this.cbbTacGia.TabIndex = 9;
+            // 
+            // tbTen
+            // 
+            this.tbTen.Location = new System.Drawing.Point(327, 26);
+            this.tbTen.Name = "tbTen";
+            this.tbTen.Size = new System.Drawing.Size(151, 21);
+            this.tbTen.TabIndex = 8;
+            // 
+            // tbMa
+            // 
+            this.tbMa.Location = new System.Drawing.Point(82, 26);
+            this.tbMa.Name = "tbMa";
+            this.tbMa.Size = new System.Drawing.Size(176, 21);
+            this.tbMa.TabIndex = 7;
+            // 
+            // lbQT
+            // 
+            this.lbQT.AutoSize = true;
+            this.lbQT.Location = new System.Drawing.Point(484, 74);
+            this.lbQT.Name = "lbQT";
+            this.lbQT.Size = new System.Drawing.Size(53, 13);
+            this.lbQT.TabIndex = 6;
+            this.lbQT.Text = "Quốc gia:";
+            // 
+            // lbTD
+            // 
+            this.lbTD.AutoSize = true;
+            this.lbTD.Location = new System.Drawing.Point(264, 74);
+            this.lbTD.Name = "lbTD";
+            this.lbTD.Size = new System.Drawing.Size(48, 13);
+            this.lbTD.TabIndex = 5;
+            this.lbTD.Text = "Thời đại:";
+            // 
+            // lbTacGia
+            // 
+            this.lbTacGia.AutoSize = true;
+            this.lbTacGia.Location = new System.Drawing.Point(484, 34);
+            this.lbTacGia.Name = "lbTacGia";
+            this.lbTacGia.Size = new System.Drawing.Size(45, 13);
+            this.lbTacGia.TabIndex = 4;
+            this.lbTacGia.Text = "Tác giả:";
+            // 
+            // lbTen
+            // 
+            this.lbTen.AutoSize = true;
+            this.lbTen.Location = new System.Drawing.Point(264, 34);
+            this.lbTen.Name = "lbTen";
+            this.lbTen.Size = new System.Drawing.Size(29, 13);
+            this.lbTen.TabIndex = 3;
+            this.lbTen.Text = "Tên:";
+            // 
+            // lbCD
+            // 
+            this.lbCD.AutoSize = true;
+            this.lbCD.Location = new System.Drawing.Point(22, 116);
+            this.lbCD.Name = "lbCD";
+            this.lbCD.Size = new System.Drawing.Size(45, 13);
+            this.lbCD.TabIndex = 2;
+            this.lbCD.Text = "Chủ đề:";
+            // 
+            // lbNam
+            // 
+            this.lbNam.AutoSize = true;
+            this.lbNam.Location = new System.Drawing.Point(22, 74);
+            this.lbNam.Name = "lbNam";
+            this.lbNam.Size = new System.Drawing.Size(32, 13);
+            this.lbNam.TabIndex = 1;
+            this.lbNam.Text = "Năm:";
+            // 
+            // lbMa
+            // 
+            this.lbMa.AutoSize = true;
+            this.lbMa.Location = new System.Drawing.Point(22, 34);
+            this.lbMa.Name = "lbMa";
+            this.lbMa.Size = new System.Drawing.Size(25, 13);
+            this.lbMa.TabIndex = 0;
+            this.lbMa.Text = "Mã:";
             // 
             // FormTPNT
             // 
@@ -416,13 +416,13 @@ namespace BTNT.Manager
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormTPNT";
-            this.Text = "FormTPNT";
+            this.Text = "Tác phẩm nghệ thuật";
             this.Load += new System.EventHandler(this.FormTPNT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.gbDSTPNT.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgDSTPNT)).EndInit();
             this.gbThongTin.ResumeLayout(false);
             this.gbThongTin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDSTPNT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

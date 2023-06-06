@@ -360,7 +360,7 @@ namespace BTNT.Manager
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormKhac";
-            this.Text = "FormKhac";
+            this.Text = "Tác phẩm khác";
             this.Load += new System.EventHandler(this.FormKhac_Load);
             this.gbDSTPK.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgDSPTK)).EndInit();

@@ -331,7 +331,7 @@ namespace BTNT.Manager
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormTrienLam";
-            this.Text = "FormTrienLam";
+            this.Text = "Triển lãm";
             this.Load += new System.EventHandler(this.FormTrienLam_Load);
             this.gbDSTL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgDSTL)).EndInit();

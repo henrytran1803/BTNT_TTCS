@@ -34,7 +34,7 @@ namespace BTNT.View
             this.label3 = new System.Windows.Forms.Label();
             this.tbLoginName = new System.Windows.Forms.TextBox();
             this.tbMatKhau = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDangNhap = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -80,15 +80,15 @@ namespace BTNT.View
             this.tbMatKhau.Size = new System.Drawing.Size(264, 21);
             this.tbMatKhau.TabIndex = 4;
             // 
-            // button1
+            // btnDangNhap
             // 
-            this.button1.Location = new System.Drawing.Point(307, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Đăng nhập";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnDangNhap.Location = new System.Drawing.Point(307, 278);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(75, 23);
+            this.btnDangNhap.TabIndex = 5;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -96,8 +96,9 @@ namespace BTNT.View
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
+            this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormLogin
             // 
@@ -105,7 +106,7 @@ namespace BTNT.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 433);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.tbMatKhau);
             this.Controls.Add(this.tbLoginName);
             this.Controls.Add(this.label3);
@@ -126,7 +127,7 @@ namespace BTNT.View
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbLoginName;
         private System.Windows.Forms.TextBox tbMatKhau;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button button2;
     }
 }

@@ -46,7 +46,6 @@ namespace BTNT.Manager
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
-            this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnHoanTac = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
@@ -55,6 +54,7 @@ namespace BTNT.Manager
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.cbbCTL = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSCTL)).BeginInit();
@@ -222,15 +222,6 @@ namespace BTNT.Manager
             this.btnThem.Name = "btnThem";
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
-            // btnGhi
-            // 
-            this.btnGhi.Caption = "Ghi";
-            this.btnGhi.Id = 2;
-            this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
-            this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
-            this.btnGhi.Name = "btnGhi";
-            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
-            // 
             // btnXoa
             // 
             this.btnXoa.Caption = "Xoá";
@@ -303,6 +294,15 @@ namespace BTNT.Manager
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 458);
             // 
+            // btnGhi
+            // 
+            this.btnGhi.Caption = "Ghi";
+            this.btnGhi.Id = 2;
+            this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
+            this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
+            this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
+            // 
             // cbbCTL
             // 
             this.cbbCTL.FormattingEnabled = true;
@@ -336,7 +336,7 @@ namespace BTNT.Manager
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormCTCTL";
-            this.Text = "FormCTCTL";
+            this.Text = "Chi tiết cuộc triển lãm";
             this.Load += new System.EventHandler(this.FormCTCTL_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgDSCTL)).EndInit();
             this.gbTT.ResumeLayout(false);

@@ -177,9 +177,8 @@ namespace BTNT.User
             this.lbNGD.AutoSize = true;
             this.lbNGD.Location = new System.Drawing.Point(98, 285);
             this.lbNGD.Name = "lbNGD";
-            this.lbNGD.Size = new System.Drawing.Size(41, 13);
+            this.lbNGD.Size = new System.Drawing.Size(0, 13);
             this.lbNGD.TabIndex = 15;
-            this.lbNGD.Text = "label16";
             this.lbNGD.Click += new System.EventHandler(this.lbNGD_Click);
             // 
             // lbDG
@@ -196,9 +195,8 @@ namespace BTNT.User
             this.lbNCD.AutoSize = true;
             this.lbNCD.Location = new System.Drawing.Point(98, 257);
             this.lbNCD.Name = "lbNCD";
-            this.lbNCD.Size = new System.Drawing.Size(41, 13);
+            this.lbNCD.Size = new System.Drawing.Size(0, 13);
             this.lbNCD.TabIndex = 13;
-            this.lbNCD.Text = "label14";
             // 
             // lbCD
             // 
@@ -214,9 +212,8 @@ namespace BTNT.User
             this.lbNQT.AutoSize = true;
             this.lbNQT.Location = new System.Drawing.Point(98, 223);
             this.lbNQT.Name = "lbNQT";
-            this.lbNQT.Size = new System.Drawing.Size(36, 13);
+            this.lbNQT.Size = new System.Drawing.Size(0, 13);
             this.lbNQT.TabIndex = 11;
-            this.lbNQT.Text = "lbNQT";
             // 
             // lbQT
             // 
@@ -232,9 +229,8 @@ namespace BTNT.User
             this.lbNTD.AutoSize = true;
             this.lbNTD.Location = new System.Drawing.Point(98, 185);
             this.lbNTD.Name = "lbNTD";
-            this.lbNTD.Size = new System.Drawing.Size(41, 13);
+            this.lbNTD.Size = new System.Drawing.Size(0, 13);
             this.lbNTD.TabIndex = 9;
-            this.lbNTD.Text = "label10";
             // 
             // lbTD
             // 
@@ -250,9 +246,8 @@ namespace BTNT.User
             this.lbNNam.AutoSize = true;
             this.lbNNam.Location = new System.Drawing.Point(98, 149);
             this.lbNNam.Name = "lbNNam";
-            this.lbNNam.Size = new System.Drawing.Size(35, 13);
+            this.lbNNam.Size = new System.Drawing.Size(0, 13);
             this.lbNNam.TabIndex = 7;
-            this.lbNNam.Text = "label8";
             // 
             // lbNam
             // 
@@ -268,9 +263,8 @@ namespace BTNT.User
             this.lbNTenTG.AutoSize = true;
             this.lbNTenTG.Location = new System.Drawing.Point(98, 114);
             this.lbNTenTG.Name = "lbNTenTG";
-            this.lbNTenTG.Size = new System.Drawing.Size(35, 13);
+            this.lbNTenTG.Size = new System.Drawing.Size(0, 13);
             this.lbNTenTG.TabIndex = 5;
-            this.lbNTenTG.Text = "label6";
             // 
             // lbTenTG
             // 
@@ -286,9 +280,8 @@ namespace BTNT.User
             this.lbNTenTP.AutoSize = true;
             this.lbNTenTP.Location = new System.Drawing.Point(98, 78);
             this.lbNTenTP.Name = "lbNTenTP";
-            this.lbNTenTP.Size = new System.Drawing.Size(35, 13);
+            this.lbNTenTP.Size = new System.Drawing.Size(0, 13);
             this.lbNTenTP.TabIndex = 3;
-            this.lbNTenTP.Text = "label4";
             // 
             // lbTenTP
             // 
@@ -304,9 +297,8 @@ namespace BTNT.User
             this.lbNMa.AutoSize = true;
             this.lbNMa.Location = new System.Drawing.Point(98, 41);
             this.lbNMa.Name = "lbNMa";
-            this.lbNMa.Size = new System.Drawing.Size(35, 13);
+            this.lbNMa.Size = new System.Drawing.Size(0, 13);
             this.lbNMa.TabIndex = 1;
-            this.lbNMa.Text = "label2";
             // 
             // lbMa
             // 

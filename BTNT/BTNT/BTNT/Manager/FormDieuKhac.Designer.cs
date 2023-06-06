@@ -50,6 +50,7 @@ namespace BTNT.Manager
             this.gbTPNT = new System.Windows.Forms.GroupBox();
             this.dgDSTPNT = new System.Windows.Forms.DataGridView();
             this.gbTT = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbKL = new System.Windows.Forms.TextBox();
             this.tbCC = new System.Windows.Forms.TextBox();
             this.lbKL = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@ namespace BTNT.Manager
             this.lbPC = new System.Windows.Forms.Label();
             this.lbMa = new System.Windows.Forms.Label();
             this.btnChon = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.gbDSTPDK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSPTDK)).BeginInit();
@@ -274,6 +274,15 @@ namespace BTNT.Manager
             this.gbTT.TabStop = false;
             this.gbTT.Text = "Thông tin";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(425, 147);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "*Khối lượng bằng kg, và chiều cao bằng cm";
+            // 
             // tbKL
             // 
             this.tbKL.Location = new System.Drawing.Point(428, 92);
@@ -368,15 +377,6 @@ namespace BTNT.Manager
             this.btnChon.UseVisualStyleBackColor = true;
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(425, 147);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "*Khối lượng bằng kg, và chiều cao bằng cm";
-            // 
             // FormDieuKhac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,7 +390,7 @@ namespace BTNT.Manager
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormDieuKhac";
-            this.Text = "Điêu khắc";
+            this.Text = "Tác phẩm điêu khắc";
             this.Load += new System.EventHandler(this.FormDieuKhac_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.gbDSTPDK.ResumeLayout(false);

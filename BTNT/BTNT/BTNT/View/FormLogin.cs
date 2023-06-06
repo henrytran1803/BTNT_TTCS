@@ -17,6 +17,16 @@ namespace BTNT.View
         public FormLogin()
         {
             InitializeComponent();
+            this.KeyPreview = true; // Đảm bảo Form có khả năng nhận sự kiện KeyDown
+            this.KeyDown += new KeyEventHandler(Form_KeyDown); // Gán sự kiện KeyDown cho Form
+
+        }
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnDangNhap.PerformClick(); // Kích hoạt sự kiện Click của nút btnDangNhap
+            }
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -24,6 +34,7 @@ namespace BTNT.View
             tbLoginName.Text = "";
             tbMatKhau.PasswordChar = '❅';
             tbMatKhau.MaxLength = 14;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,5 +77,9 @@ namespace BTNT.View
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
