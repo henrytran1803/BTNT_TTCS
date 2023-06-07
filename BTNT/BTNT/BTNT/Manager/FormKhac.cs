@@ -70,6 +70,32 @@ namespace BTNT.Manager
                 MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void layDanhSachTL()
+        {
+            string cmd = "SELECT MATL, TENTL FROM THE_LOAI";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Program.connstr))
+                {
+                    connection.Open();
+
+                    DataTable dt = new DataTable();
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd, connection))
+                    {
+                        da.Fill(dt);
+                    }
+
+                    cbbTL.DataSource = dt;
+                    cbbTL.DisplayMember = "TENTL";
+                    cbbTL.ValueMember = "MATL";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void layDanhSachTPDK()
         {
             string cmd = "SELECT TP.MATPNT, TP.TENTP FROM TPNT TP WHERE TP.MATPNT IN (SELECT MATPNT FROM KHAC)";
@@ -162,7 +188,7 @@ namespace BTNT.Manager
                 ds = new DataSet();
             }
 
-            string sqlCommand = "SELECT TP.MATPNT, TP.TENTP, CONCAT(TG.HO, ' ', TG.TEN) AS HOVATEN, PC.TENPC, K.ANH FROM TPNT TP JOIN TAC_GIA TG ON TP.MATG = TG.MATACGIA JOIN KHAC K ON K.MATPNT = TP.MATPNT JOIN PHONG_CACH_K PC ON PC.MAPC = K.MAPC  WHERE TP.MATPNT IN (SELECT MATPNT FROM KHAC)";
+            string sqlCommand = "SELECT TP.MATPNT, TP.TENTP, CONCAT(TG.HO, ' ', TG.TEN) AS HOVATEN, PC.TENPC, K.ANH, TL.TENTL FROM TPNT TP JOIN TAC_GIA TG ON TP.MATG = TG.MATACGIA JOIN KHAC K ON K.MATPNT = TP.MATPNT JOIN PHONG_CACH_K PC ON PC.MAPC = K.MAPC JOIN THE_LOAI TL on TL.MATL=K.MATL  WHERE TP.MATPNT IN (SELECT MATPNT FROM KHAC)";
             DataTable dataTable = Program.ExecSqlDataTable(sqlCommand);
 
             // Xóa bảng "TPNT" nếu đã tồn tại trong DataSet
@@ -180,6 +206,7 @@ namespace BTNT.Manager
             dgDSPTK.Columns["HOVATEN"].HeaderText = "Tên tác giả";
             dgDSPTK.Columns["TENPC"].HeaderText = "Phong cách";
             dgDSPTK.Columns["ANH"].HeaderText = "Url ảnh";
+            dgDSPTK.Columns["TENTL"].HeaderText = "Thể loại";
             // Thiết lập AutoSizeMode của các cột
             foreach (DataGridViewColumn column in dgDSPTK.Columns)
             {
@@ -192,6 +219,7 @@ namespace BTNT.Manager
             loadDataTPK();
             loadDataTPNT();
             layDanhSachPC();
+            layDanhSachTL();
             gbDSTPK.Enabled = false;
             gbTPNT.Enabled = false;
             gbTT.Enabled = false;
@@ -202,6 +230,7 @@ namespace BTNT.Manager
             tbUrl.Text = "";
             cheDo = 0;
             pictureBox.Image = null;
+            cbbTL.Enabled = true;
 
         }
 
@@ -218,7 +247,7 @@ namespace BTNT.Manager
             cheDo = 1;
             layDanhSachTPNT();
             pictureBox.Image = null;
-
+            cbbTL.Enabled = true;
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -234,7 +263,7 @@ namespace BTNT.Manager
             cheDo = 2;
             layDanhSachTPDK();
             pictureBox.Image = null;
-
+            cbbTL.Enabled = true;
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -250,7 +279,7 @@ namespace BTNT.Manager
             cheDo = 3;
             layDanhSachTPDK();
             pictureBox.Image = null;
-
+            cbbTL.Enabled = false;
         }
         List<DtKhac> danhSachBackup = new List<DtKhac>();
 
@@ -259,7 +288,7 @@ namespace BTNT.Manager
             string ma = cbbTP.SelectedValue.ToString();
             string phongCach = cbbPC.SelectedValue.ToString();
             byte[] anh = imageBytes;
-
+            string theloai = cbbTL.SelectedValue.ToString();
 
             // Kiểm tra mã TPNT trong bảng DIEU_KHAC
             if (cheDo == 1)
@@ -296,7 +325,7 @@ namespace BTNT.Manager
 
                 if (result == 0)
                 {
-                    string cauTruyVanInsert = "INSERT INTO KHAC(MATPNT, MAPC, ANH) VALUES (@MATPNT, @MAPC, @ANH)";
+                    string cauTruyVanInsert = "INSERT INTO KHAC(MATPNT, MAPC, ANH, MATL) VALUES (@MATPNT, @MAPC, @ANH, @MATL)";
 
                     using (SqlConnection connection = new SqlConnection(Program.connstr))
                     {
@@ -307,7 +336,7 @@ namespace BTNT.Manager
                         command.Parameters.AddWithValue("@MATPNT", ma);
                         command.Parameters.AddWithValue("@MAPC", phongCach);
                         command.Parameters.AddWithValue("@ANH", anh);
-                        
+                        command.Parameters.AddWithValue("@MATL", theloai);
 
                         command.ExecuteNonQuery();
                         connection.Close();
@@ -338,7 +367,7 @@ namespace BTNT.Manager
                                  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    string query = "UPDATE KHAC SET MAPC = @MAPC, ANH = @ANH WHERE MATPNT = @MATPNT";
+                    string query = "UPDATE KHAC SET MAPC = @MAPC, ANH = @ANH, MATL = @MATL WHERE MATPNT = @MATPNT";
 
                     using (SqlConnection connection = new SqlConnection(Program.connstr))
                     {
@@ -349,7 +378,7 @@ namespace BTNT.Manager
                         command.Parameters.AddWithValue("@MATPNT", ma);
                         command.Parameters.AddWithValue("@MAPC", phongCach);
                         command.Parameters.AddWithValue("@ANH", anh);
-
+                        command.Parameters.AddWithValue("@MATL", theloai);
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
@@ -366,7 +395,7 @@ namespace BTNT.Manager
                 if (dialogResult == DialogResult.Yes)
                 {
 
-                    DtKhac backup = new DtKhac(ma, phongCach,anh );
+                    DtKhac backup = new DtKhac(ma, phongCach,anh , theloai);
 
                     danhSachBackup.Add(backup);
 
@@ -411,7 +440,7 @@ namespace BTNT.Manager
             }
 
             // Thực hiện việc phục hồi dữ liệu
-            string cauTruyVanInsert = "INSERT INTO KHAC(MATPNT, MAPC, ANH) VALUES (@MATPNT, @MAPC, @ANH)";
+            string cauTruyVanInsert = "INSERT INTO KHAC(MATPNT, MAPC, ANH,MATL) VALUES (@MATPNT, @MAPC, @ANH, @MATL)";
 
             using (SqlConnection connection = new SqlConnection(Program.connstr))
             {
@@ -433,7 +462,7 @@ namespace BTNT.Manager
 
                 // Gán đối tượng Image vào tham số @ANH
                 command.Parameters.AddWithValue("@ANH", ImageToByteArray(image));
-
+                command.Parameters.AddWithValue("@MATL", duLieuCanPhucHoi.MaTL);
                 command.ExecuteNonQuery();
                 connection.Close();
             }

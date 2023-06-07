@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -36,6 +37,7 @@ namespace BTNT.Manager
             dpNgayTra.Enabled = true;
             btnChon.Text = "Chọn";
             cheDo = 0;
+            tbNDD.Text = "";
         }
         DataSet ds = null;
         int cheDo = 0;
@@ -78,7 +80,7 @@ namespace BTNT.Manager
                 ds = new DataSet();
             }
 
-            string sqlCommand = "SELECT M.MATPNT, TP.TENTP, CONCAT(TG.HO, ' ', TG.TEN) AS HOVATEN, BS.TENBST, M.NGAYMUON,M.NGAYTRA  FROM MUON M JOIN TPNT TP ON TP.MATPNT = M.MATPNT JOIN TAC_GIA TG ON TP.MATG = TG.MATACGIA JOIN BO_SUU_TAP BS ON BS.MABST = M.MABST  WHERE TP.MATPNT IN (SELECT MATPNT FROM MUON)";
+            string sqlCommand = "SELECT M.MATPNT, TP.TENTP, CONCAT(TG.HO, ' ', TG.TEN) AS HOVATEN, BS.TENBST, M.NGAYMUON,M.NGAYTRA, M.NGUOIDAIDIEN  FROM MUON M JOIN TPNT TP ON TP.MATPNT = M.MATPNT JOIN TAC_GIA TG ON TP.MATG = TG.MATACGIA JOIN BO_SUU_TAP BS ON BS.MABST = M.MABST  WHERE TP.MATPNT IN (SELECT MATPNT FROM MUON)";
             DataTable dataTable = Program.ExecSqlDataTable(sqlCommand);
 
             // Xóa bảng "TPNT" nếu đã tồn tại trong DataSet
@@ -97,6 +99,7 @@ namespace BTNT.Manager
             dgDSMuon.Columns["TENBST"].HeaderText = "Bộ sưu tập";
             dgDSMuon.Columns["NGAYMUON"].HeaderText = "Ngày mượn";
             dgDSMuon.Columns["NGAYTRA"].HeaderText = "Ngày trả";
+            dgDSMuon.Columns["NGUOIDAIDIEN"].HeaderText = "Người đại diện";
             // Thiết lập AutoSizeMode của các cột
             foreach (DataGridViewColumn column in dgDSMuon.Columns)
             {
@@ -208,6 +211,8 @@ namespace BTNT.Manager
                 {
                     dpNgayTra.Value = ngayTra;
                 }
+                
+                    tbNDD.Text = row.Cells["NGUOIDAIDIEN"].Value.ToString();
             }
         }
 
@@ -223,6 +228,7 @@ namespace BTNT.Manager
             btnChon.Text = "Thêm";
             cheDo = 1;
             layDanhSachTPNT();
+            tbNDD.Text = "";
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -237,6 +243,7 @@ namespace BTNT.Manager
             btnChon.Text = "Ghi";
             cheDo = 2;
             layDanhSachTPMUON();
+            tbNDD.Text = "";
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -251,14 +258,41 @@ namespace BTNT.Manager
             btnChon.Text = "Xoá";
             cheDo = 3;
             layDanhSachTPMUON();
+            tbNDD.Text = "";
+        }
+        private bool kiemTraDauVao()
+        {
+            if (tbNDD.Text.Trim() == "")
+            {
+                MessageBox.Show("Không bỏ trống Tên", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+
+            if (Regex.IsMatch(tbNDD.Text.Trim(), @"^[a-zA-Z]+$") == false)
+            {
+                MessageBox.Show("Tên chỉ nhận chữ hoa và chữ thường", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+
+            if (tbNDD.Text.Trim().Length > 50)
+            {
+                MessageBox.Show("Tên không thể lớn hơn 50 kí tự", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+           
+
+            return true;
         }
         private void btnChon_Click(object sender, EventArgs e)
         {
-            
+            bool kiemTra = kiemTraDauVao();
+            if (kiemTra == false)
+                return;
             string ma = cbbTP.SelectedValue.ToString();
             string bst = cbbBST.SelectedValue.ToString();
             DateTime ngaymuon = dpNgayMuon.Value;
             DateTime ngaytra = dpNgayTra.Value;
+            string ndd = tbNDD.Text;
             if (cheDo == 1)
             {
                 bool kiemtra = KiemTraDauVao();
@@ -296,7 +330,7 @@ namespace BTNT.Manager
 
                 if (result == 0)
                 {
-                    string cauTruyVanInsert = "INSERT INTO MUON(MATPNT, MABST, NGAYMUON, NGAYTRA) VALUES (@MATPNT, @MABST, @NGAYMUON, @NGAYTRA)";
+                    string cauTruyVanInsert = "INSERT INTO MUON(MATPNT, MABST, NGAYMUON, NGAYTRA, NGUOIDAIDIEN) VALUES (@MATPNT, @MABST, @NGAYMUON, @NGAYTRA, @NGUOIDAIDIEN)";
 
                     using (SqlConnection connection = new SqlConnection(Program.connstr))
                     {
@@ -308,7 +342,7 @@ namespace BTNT.Manager
                         command.Parameters.AddWithValue("@MABST", bst);
                         command.Parameters.AddWithValue("@NGAYMUON", ngaymuon);
                         command.Parameters.AddWithValue("@NGAYTRA", ngaytra);
-
+                        command.Parameters.AddWithValue("@NGUOIDAIDIEN", ndd);
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
@@ -372,7 +406,7 @@ namespace BTNT.Manager
                     {
                         try
                         {
-                            string query = "UPDATE MUON SET MABST = @MABST, NGAYMUON = @NGAYMUON, NGAYTRA = @NGAYTRA WHERE MATPNT = @MATPNT";
+                            string query = "UPDATE MUON SET MABST = @MABST, NGAYMUON = @NGAYMUON, NGAYTRA = @NGAYTRA, NGUOIDAIDIEN = @NGUOIDAIDIEN WHERE MATPNT = @MATPNT";
                             // Thực hiện câu truy vấn UPDATE
                             using (SqlConnection connection = new SqlConnection(Program.connstr))
                             {
@@ -384,7 +418,7 @@ namespace BTNT.Manager
                                 command.Parameters.AddWithValue("@MABST", bst);
                                 command.Parameters.AddWithValue("@NGAYMUON", ngaymuon);
                                 command.Parameters.AddWithValue("@NGAYTRA", ngaytra);
-
+                                command.Parameters.AddWithValue("@NGUOIDAIDIEN", ndd);
                                 command.ExecuteNonQuery();
                                 connection.Close();
                             }
@@ -452,7 +486,7 @@ namespace BTNT.Manager
                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    DtMuon backup = new DtMuon(ma, bst, ngaymuon, ngaytra);
+                    DtMuon backup = new DtMuon(ma, bst, ngaymuon, ngaytra,ndd);
                     danhSachBackup.Add(backup);
 
                     string query = "DELETE FROM MUON WHERE MATPNT = @MATPNT";
@@ -508,7 +542,7 @@ namespace BTNT.Manager
             DtMuon duLieuCanPhucHoi = danhSachBackup[danhSachBackup.Count - 1];
 
             // Thực hiện việc phục hồi dữ liệu
-            string cauTruyVanInsert = "INSERT INTO MUON(MATPNT, MABST, NGAYMUON, NGAYTRA) VALUES (@MATPNT, @MABST, @NGAYMUON, @NGAYTRA)";
+            string cauTruyVanInsert = "INSERT INTO MUON(MATPNT, MABST, NGAYMUON, NGAYTRA,NGUOIDAIDIEN) VALUES (@MATPNT, @MABST, @NGAYMUON, @NGAYTRA,@NGUOIDAIDIEN)";
 
             using (SqlConnection connection = new SqlConnection(Program.connstr))
             {
@@ -520,7 +554,7 @@ namespace BTNT.Manager
                 command.Parameters.AddWithValue("@MABST", duLieuCanPhucHoi.MaBST);
                 command.Parameters.AddWithValue("@NGAYMUON", duLieuCanPhucHoi.NgayMuon);
                 command.Parameters.AddWithValue("@NGAYTRA", duLieuCanPhucHoi.NgayTra);
-
+                command.Parameters.AddWithValue("@NGUOIDAIDIEN", duLieuCanPhucHoi.NguoiDaiDien);
                 command.ExecuteNonQuery();
                 connection.Close();
             }
@@ -554,6 +588,11 @@ namespace BTNT.Manager
         }
 
         private void gbTPNT_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbNDD_TextChanged(object sender, EventArgs e)
         {
 
         }

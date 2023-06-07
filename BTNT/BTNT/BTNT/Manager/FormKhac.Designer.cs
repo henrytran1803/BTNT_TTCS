@@ -59,6 +59,8 @@ namespace BTNT.Manager
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbbTL = new System.Windows.Forms.ComboBox();
             this.gbDSTPK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSPTK)).BeginInit();
             this.gbTT.SuspendLayout();
@@ -144,6 +146,8 @@ namespace BTNT.Manager
             // 
             // gbTT
             // 
+            this.gbTT.Controls.Add(this.cbbTL);
+            this.gbTT.Controls.Add(this.label1);
             this.gbTT.Controls.Add(this.pictureBox);
             this.gbTT.Controls.Add(this.tbUrl);
             this.gbTT.Controls.Add(this.btnChonHinh);
@@ -171,14 +175,14 @@ namespace BTNT.Manager
             // 
             // tbUrl
             // 
-            this.tbUrl.Location = new System.Drawing.Point(96, 78);
+            this.tbUrl.Location = new System.Drawing.Point(96, 99);
             this.tbUrl.Name = "tbUrl";
             this.tbUrl.Size = new System.Drawing.Size(180, 21);
             this.tbUrl.TabIndex = 14;
             // 
             // btnChonHinh
             // 
-            this.btnChonHinh.Location = new System.Drawing.Point(282, 76);
+            this.btnChonHinh.Location = new System.Drawing.Point(282, 97);
             this.btnChonHinh.Name = "btnChonHinh";
             this.btnChonHinh.Size = new System.Drawing.Size(75, 23);
             this.btnChonHinh.TabIndex = 13;
@@ -189,7 +193,7 @@ namespace BTNT.Manager
             // lbAnh
             // 
             this.lbAnh.AutoSize = true;
-            this.lbAnh.Location = new System.Drawing.Point(24, 81);
+            this.lbAnh.Location = new System.Drawing.Point(24, 107);
             this.lbAnh.Name = "lbAnh";
             this.lbAnh.Size = new System.Drawing.Size(30, 13);
             this.lbAnh.TabIndex = 12;
@@ -347,6 +351,23 @@ namespace BTNT.Manager
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 421);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Thể loại:";
+            // 
+            // cbbTL
+            // 
+            this.cbbTL.FormattingEnabled = true;
+            this.cbbTL.Location = new System.Drawing.Point(96, 70);
+            this.cbbTL.Name = "cbbTL";
+            this.cbbTL.Size = new System.Drawing.Size(261, 21);
+            this.cbbTL.TabIndex = 20;
+            // 
             // FormKhac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,5 +426,7 @@ namespace BTNT.Manager
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.ComboBox cbbTL;
+        private System.Windows.Forms.Label label1;
     }
 }

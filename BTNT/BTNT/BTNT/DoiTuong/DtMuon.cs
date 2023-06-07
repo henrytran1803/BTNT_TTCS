@@ -12,13 +12,14 @@ namespace BTNT.DoiTuong
         public string MaTPNT { get; set; }
         public DateTime NgayMuon { get; set; }
         public DateTime NgayTra { get; set; }
-
-        public DtMuon(string maTPNT, string maBST, DateTime ngayMuon, DateTime ngayTra)
+        public string NguoiDaiDien { get; set; }
+        public DtMuon(string maTPNT, string maBST, DateTime ngayMuon, DateTime ngayTra ,string nguoiDaiDien)
         {
             MaBST = maBST;
             MaTPNT = maTPNT;
             NgayMuon = ngayMuon;
             NgayTra = ngayTra;
+            NguoiDaiDien = nguoiDaiDien;
         }
     }
 

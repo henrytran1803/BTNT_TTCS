@@ -59,6 +59,8 @@ namespace BTNT.Manager
             this.dpNgayMuon = new System.Windows.Forms.DateTimePicker();
             this.dgDSMuon = new System.Windows.Forms.DataGridView();
             this.gbDSMuon = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbNDD = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDSTPNT)).BeginInit();
             this.gbTPNT.SuspendLayout();
@@ -279,6 +281,8 @@ namespace BTNT.Manager
             // 
             // gbTT
             // 
+            this.gbTT.Controls.Add(this.tbNDD);
+            this.gbTT.Controls.Add(this.label1);
             this.gbTT.Controls.Add(this.cbbBST);
             this.gbTT.Controls.Add(this.dpNgayTra);
             this.gbTT.Controls.Add(this.lbNgayTra);
@@ -298,9 +302,9 @@ namespace BTNT.Manager
             // cbbBST
             // 
             this.cbbBST.FormattingEnabled = true;
-            this.cbbBST.Location = new System.Drawing.Point(96, 35);
+            this.cbbBST.Location = new System.Drawing.Point(109, 35);
             this.cbbBST.Name = "cbbBST";
-            this.cbbBST.Size = new System.Drawing.Size(261, 21);
+            this.cbbBST.Size = new System.Drawing.Size(248, 21);
             this.cbbBST.TabIndex = 16;
             // 
             // dpNgayTra
@@ -321,9 +325,9 @@ namespace BTNT.Manager
             // 
             // dpNgayMuon
             // 
-            this.dpNgayMuon.Location = new System.Drawing.Point(96, 101);
+            this.dpNgayMuon.Location = new System.Drawing.Point(109, 101);
             this.dpNgayMuon.Name = "dpNgayMuon";
-            this.dpNgayMuon.Size = new System.Drawing.Size(261, 21);
+            this.dpNgayMuon.Size = new System.Drawing.Size(248, 21);
             this.dpNgayMuon.TabIndex = 13;
             // 
             // dgDSMuon
@@ -344,6 +348,23 @@ namespace BTNT.Manager
             this.gbDSMuon.TabIndex = 13;
             this.gbDSMuon.TabStop = false;
             this.gbDSMuon.Text = "Danh sách mượn";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 168);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Người đại diện:";
+            // 
+            // tbNDD
+            // 
+            this.tbNDD.Location = new System.Drawing.Point(109, 160);
+            this.tbNDD.Name = "tbNDD";
+            this.tbNDD.Size = new System.Drawing.Size(248, 21);
+            this.tbNDD.TabIndex = 18;
+            this.tbNDD.TextChanged += new System.EventHandler(this.tbNDD_TextChanged);
             // 
             // FormMuon
             // 
@@ -402,5 +423,7 @@ namespace BTNT.Manager
         private System.Windows.Forms.Button btnChon;
         private System.Windows.Forms.GroupBox gbDSMuon;
         private System.Windows.Forms.DataGridView dgDSMuon;
+        private System.Windows.Forms.TextBox tbNDD;
+        private System.Windows.Forms.Label label1;
     }
 }

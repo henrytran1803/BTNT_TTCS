@@ -11,12 +11,13 @@ namespace BTNT.DoiTuong
         public string MaTPNT { get; set; }
         public string PhongCach { get; set; }
         public byte[] AnhChup { get; set; }
-
-        public DtKhac(string maTPNT, string phongCach, byte[] anhChup)
+        public string MaTL { get; set; }
+        public DtKhac(string maTPNT, string phongCach, byte[] anhChup, string maTL)
         {
             MaTPNT = maTPNT;
             PhongCach = phongCach;
             AnhChup = anhChup;
+            MaTL = maTL;
         }
     }
 
