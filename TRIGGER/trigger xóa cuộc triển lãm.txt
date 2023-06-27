@@ -1,0 +1,21 @@
+CREATE TRIGGER tr_Delete_CUOC_TRIEN_LAM
+ON CUOC_TRIEN_LAM
+INSTEAD OF DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    IF EXISTS (
+        SELECT 1
+        FROM CT_CTL
+        WHERE MACTL IN (SELECT MACTL FROM deleted)
+    )
+    BEGIN
+        RAISERROR ('MACTL này đã xuất hiện trong CT_CTL, không thể xoá!', 16, 1);
+        ROLLBACK TRANSACTION; 
+    END
+    ELSE
+    BEGIN
+        DELETE FROM CUOC_TRIEN_LAM
+        WHERE MACTL IN (SELECT MACTL FROM deleted);
+    END
+END;

@@ -1,0 +1,28 @@
+CREATE TRIGGER tr_XoaTPNT
+ON TPNT
+INSTEAD OF DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    DECLARE @MATPNT nchar(8);
+    SELECT @MATPNT = MATPNT FROM deleted;
+    
+    DECLARE @NgayHienTai date = GETDATE();
+    
+    IF EXISTS (
+        SELECT 1 
+        FROM CT_CTL
+        INNER JOIN CUOC_TRIEN_LAM ON CT_CTL.MACTL = CUOC_TRIEN_LAM.MACTL
+        WHERE CT_CTL.MATPNT = @MATPNT
+        AND (CUOC_TRIEN_LAM.NGAYBATDAU > @NgayHienTai OR (CUOC_TRIEN_LAM.NGAYBATDAU <= @NgayHienTai AND CUOC_TRIEN_LAM.NGAYKETTHUC >= @NgayHienTai))
+    )
+    BEGIN
+        RAISERROR ('Không thể xoá vì có trong lịch triển lãm hiện tại hoặc sắp tới', 16, 1);
+        ROLLBACK TRANSACTION;
+    END
+    ELSE
+    BEGIN
+        DELETE FROM TPNT WHERE MATPNT = @MATPNT;
+    END
+END;

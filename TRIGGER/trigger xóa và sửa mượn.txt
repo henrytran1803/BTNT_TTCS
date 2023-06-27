@@ -1,0 +1,54 @@
+CREATE TRIGGER tr_InsteadOf_Delete_MUON
+ON MUON
+INSTEAD OF DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM deleted d
+        WHERE GETDATE() > d.NGAYTRA
+    )
+    BEGIN
+        RAISERROR ('Ngày hiện tại lớn hơn ngày trả!', 16, 1)
+        ROLLBACK TRANSACTION; 
+        RETURN;
+    END
+
+
+    DELETE FROM MUON
+    WHERE EXISTS (
+        SELECT 1
+        FROM deleted d
+        WHERE MUON.MATPNT = d.MATPNT
+    )
+
+    COMMIT TRANSACTION;
+END;
+
+CREATE TRIGGER tr_InsteadOf_Update_MUON
+ON MUON
+INSTEAD OF UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM deleted d
+        WHERE GETDATE() > d.NGAYTRA
+    )
+    BEGIN
+        RAISERROR ('Ngày hiện tại lớn hơn ngày trả!', 16, 1)
+        ROLLBACK TRANSACTION; 
+        RETURN;
+    END
+
+    UPDATE MUON
+    SET MUON.MATPNT = i.MATPNT, MUON.MABST = i.MABST, MUON.NGAYMUON = i.NGAYMUON, MUON.NGAYTRA = i.NGAYTRA, MUON.NGUOIDAIDIEN = i.NGUOIDAIDIEN
+    FROM MUON
+    INNER JOIN inserted i ON MUON.MATPNT = i.MATPNT
+
+    COMMIT TRANSACTION;
+END;

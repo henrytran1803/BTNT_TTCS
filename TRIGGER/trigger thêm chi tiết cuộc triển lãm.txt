@@ -1,0 +1,46 @@
+CREATE TRIGGER tr_Insert_CT_CTL
+ON CT_CTL
+INSTEAD OF INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @NgayBatDau DATETIME
+    DECLARE @NgayHienTai DATETIME
+    SET @NgayHienTai = GETDATE()
+
+    INSERT INTO CT_CTL (MACTL, MATPNT)
+    SELECT i.MACTL, i.MATPNT
+    FROM inserted i
+    JOIN CUOC_TRIEN_LAM TL ON TL.MACTL = i.MACTL
+
+    IF EXISTS (
+        SELECT 1
+        FROM inserted i
+        JOIN CUOC_TRIEN_LAM TL ON TL.MACTL = i.MACTL
+        WHERE TL.NGAYBATDAU <= @NgayHienTai
+    )
+    BEGIN
+        RAISERROR ('Ngày bắt đầu không thể bé hơn hoặc bằng ngày hiện tại!', 16, 1)
+        ROLLBACK TRANSACTION; -- Hoặc thực hiện các xử lý khác tùy theo yêu cầu
+        RETURN;
+    END
+
+    IF EXISTS (
+        SELECT 1
+        FROM inserted i
+        JOIN CUOC_TRIEN_LAM TL ON TL.MACTL = i.MACTL
+        JOIN CT_CTL C ON C.MATPNT = i.MATPNT
+        WHERE (
+            (TL.NGAYBATDAU < @NgayBatDau AND TL.NGAYKETTHUC > @NgayKetThuc)
+            OR (TL.NGAYBATDAU < @NgayBatDau AND TL.NGAYKETTHUC < @NgayKetThuc)
+            OR (TL.NGAYBATDAU > @NgayBatDau AND TL.NGAYKETTHUC < @NgayKetThuc)
+        )
+    )
+    BEGIN
+        RAISERROR ('Điều kiện không hợp lệ!', 16, 1)
+        ROLLBACK TRANSACTION; -- Hoặc thực hiện các xử lý khác tùy theo yêu cầu
+        RETURN;
+    END
+    COMMIT TRANSACTION;
+END;

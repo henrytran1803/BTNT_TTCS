@@ -1,0 +1,21 @@
+CREATE TRIGGER tr_Xoa_TAC_GIA
+ON TAC_GIA
+INSTEAD OF DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    IF EXISTS (
+        SELECT 1
+        FROM TPNT
+        WHERE MATG IN (SELECT MATACGIA FROM deleted)
+    )
+    BEGIN
+        RAISERROR ('MATACGIA này đã xuất hiện trong TPNT, không thể xoá!', 16, 1);
+        ROLLBACK TRANSACTION; 
+    END
+    ELSE
+    BEGIN
+        DELETE FROM TAC_GIA
+        WHERE MATACGIA IN (SELECT MATACGIA FROM deleted);
+    END
+END;

@@ -1,0 +1,24 @@
+CREATE TRIGGER tr_InsteadOf_Delete_Update_CT_CTL
+ON CT_CTL
+INSTEAD OF DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM deleted d
+        JOIN CUOC_TRIEN_LAM TL ON TL.MACTL = d.MACTL
+        WHERE TL.NGAYKETTHUC < GETDATE()
+    )
+    BEGIN
+        RAISERROR ('Ngày kết thúc không thể bé hơn ngày hiện tại!', 16, 1)
+        ROLLBACK TRANSACTION; 
+        RETURN;
+    END
+
+    DELETE FROM CT_CTL
+    WHERE MACTL IN (SELECT MACTL FROM deleted)
+
+    COMMIT TRANSACTION;
+END;

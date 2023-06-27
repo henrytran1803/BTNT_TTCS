@@ -1,0 +1,28 @@
+CREATE TRIGGER tr_InsteadOf_Insert_SO_HUU
+ON SO_HUU
+INSTEAD OF INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM inserted i
+        WHERE EXISTS (
+            SELECT 1
+            FROM MUON
+            WHERE MUON.MATPNT = i.MATPNT
+        )
+    )
+    BEGIN
+        RAISERROR ('MATPNT đã xuất hiện trong bảng MUON!', 16, 1)
+        ROLLBACK TRANSACTION; -- Hoặc thực hiện các xử lý khác tùy theo yêu cầu
+        RETURN;
+    END
+
+    INSERT INTO SO_HUU (MATPNT, NGAYSOHUU, TINHTRANG, GIATRI)
+    SELECT MATPNT, NGAYSOHUU, TINHTRANG, GIATRI
+    FROM inserted;
+
+    COMMIT TRANSACTION;
+END;

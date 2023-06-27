@@ -1,0 +1,27 @@
+CREATE TRIGGER tr_InsteadOf_Delete_BO_SUU_TAP
+ON BO_SUU_TAP
+INSTEAD OF DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM deleted d
+        WHERE EXISTS (
+            SELECT 1
+            FROM MUON M
+            WHERE M.MABST = d.MABST
+        )
+    )
+    BEGIN
+        RAISERROR ('Không thể xoá bộ sưu tập khi MABST xuất hiện trong bảng MUON!', 16, 1)
+        ROLLBACK TRANSACTION; 
+        RETURN;
+    END
+
+    DELETE FROM BO_SUU_TAP
+    WHERE MABST IN (SELECT MABST FROM deleted)
+
+    COMMIT TRANSACTION;
+END;

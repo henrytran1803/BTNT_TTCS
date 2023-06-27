@@ -1,0 +1,22 @@
+CREATE TRIGGER tr_ThemTacGia
+ON TAC_GIA
+INSTEAD OF INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    IF EXISTS (
+        SELECT 1
+        FROM TAC_GIA tg
+        INNER JOIN inserted ins ON tg.HO + tg.TEN = ins.HO + ins.TEN
+    )
+    BEGIN
+        RAISERROR ('Đã xuất hiện tên tác giả!', 16, 1);
+        ROLLBACK TRANSACTION; -- Hoặc thực hiện các xử lý khác tùy theo yêu cầu
+    END
+    ELSE
+    BEGIN
+        INSERT INTO TAC_GIA (MATACGIA, HO, TEN, NGAYSINH, NGAYMAT, MAQT, MATD, MAPC, DIENGIAI)
+        SELECT MATACGIA, HO, TEN, NGAYSINH, NGAYMAT, MAQT, MATD, MAPC, DIENGIAI
+        FROM inserted;
+    END
+END;

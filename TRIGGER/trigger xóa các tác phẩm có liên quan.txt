@@ -1,0 +1,36 @@
+CREATE TRIGGER tr_DeleteRelatedData
+ON TPNT
+AFTER DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Lấy danh sách các MATPNT đã bị xoá
+    DECLARE @DeletedMATPNTs TABLE (MATPNT nchar(8));
+    INSERT INTO @DeletedMATPNTs
+    SELECT MATPNT FROM deleted;
+
+    -- Xoá bản ghi có liên quan trong bảng KHAC
+    DELETE FROM KHAC
+    WHERE MATPNT IN (SELECT MATPNT FROM @DeletedMATPNTs);
+
+    -- Xoá bản ghi có liên quan trong bảng DIEU_KHAC
+    DELETE FROM DIEU_KHAC
+    WHERE MATPNT IN (SELECT MATPNT FROM @DeletedMATPNTs);
+
+    -- Xoá bản ghi có liên quan trong bảng HOI_HOA
+    DELETE FROM HOI_HOA
+    WHERE MATPNT IN (SELECT MATPNT FROM @DeletedMATPNTs);
+
+    -- Xoá bản ghi có liên quan trong bảng SO_HUU
+    DELETE FROM SO_HUU
+    WHERE MATPNT IN (SELECT MATPNT FROM @DeletedMATPNTs);
+
+    -- Xoá bản ghi có liên quan trong bảng MUON
+    DELETE FROM MUON
+    WHERE MATPNT IN (SELECT MATPNT FROM @DeletedMATPNTs);
+
+    -- Xoá bản ghi có liên quan trong bảng CT_CTL
+    DELETE FROM CT_CTL
+    WHERE MATPNT IN (SELECT MATPNT FROM @DeletedMATPNTs);
+END;
