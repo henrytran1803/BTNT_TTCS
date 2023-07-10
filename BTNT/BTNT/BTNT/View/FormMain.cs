@@ -224,7 +224,7 @@ namespace BTNT.View
             rbpTrienLam.Visible = false;
             rbpHeThong.Visible = true;
             btnQuyen.Caption = "Người dùng";
-            btnTaoTk.Enabled = false;
+            btnRestore.Enabled = false;
             btnDangXuat.Enabled = false;
         }
         public void nhanVien()
@@ -234,7 +234,7 @@ namespace BTNT.View
             rbpTrienLam.Visible = true;
             rbpHeThong.Visible = true;
             btnQuyen.Caption = "Nhân viên";
-            btnTaoTk.Enabled = false;
+            btnRestore.Enabled = true;
         }
         public void ennable()
         {
@@ -244,7 +244,7 @@ namespace BTNT.View
             rbpHeThong.Visible = true;
             btnDangNhap.Enabled = false;
             btnDangXuat.Enabled = true;
-            btnTaoTk.Enabled = false;
+            btnRestore.Enabled = true;
         }
         public void unennable()
         {
@@ -305,6 +305,21 @@ namespace BTNT.View
             else
             {
                 FormLogin form = new FormLogin();
+                form.Show();
+
+            }
+        }
+
+        private void btnRestore_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormRestore));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormRestore form = new FormRestore();
                 form.Show();
 
             }

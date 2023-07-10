@@ -34,7 +34,7 @@ namespace BTNT.View
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTaoTk = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRestore = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.btnKhamPha = new DevExpress.XtraBars.BarButtonItem();
             this.btnTrienLam = new DevExpress.XtraBars.BarButtonItem();
@@ -68,13 +68,13 @@ namespace BTNT.View
             // 
             // ribbon
             // 
+            this.ribbon.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(60, 58, 60, 58);
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
-            this.ribbon.SearchEditItem,
             this.btnDangNhap,
             this.btnDangXuat,
-            this.btnTaoTk,
+            this.btnRestore,
             this.btnThoat,
             this.btnKhamPha,
             this.btnTrienLam,
@@ -90,14 +90,16 @@ namespace BTNT.View
             this.btnCTCTL,
             this.btnQuyen});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ribbon.MaxItemId = 18;
             this.ribbon.Name = "ribbon";
+            this.ribbon.OptionsMenuMinWidth = 660;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbpHeThong,
             this.rbpTrangChu,
             this.rbpTPNT,
             this.rbpTrienLam});
-            this.ribbon.Size = new System.Drawing.Size(832, 158);
+            this.ribbon.Size = new System.Drawing.Size(1664, 308);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
@@ -119,13 +121,14 @@ namespace BTNT.View
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
-            // btnTaoTk
+            // btnRestore
             // 
-            this.btnTaoTk.Caption = "Tạo tài khoản";
-            this.btnTaoTk.Id = 3;
-            this.btnTaoTk.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaoTk.ImageOptions.Image")));
-            this.btnTaoTk.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTaoTk.ImageOptions.LargeImage")));
-            this.btnTaoTk.Name = "btnTaoTk";
+            this.btnRestore.Caption = "Backup/ Restore";
+            this.btnRestore.Id = 3;
+            this.btnRestore.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaoTk.ImageOptions.Image")));
+            this.btnRestore.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTaoTk.ImageOptions.LargeImage")));
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestore_ItemClick);
             // 
             // btnThoat
             // 
@@ -262,7 +265,7 @@ namespace BTNT.View
             this.ribbonPageGroup1.ItemLinks.Add(this.btnDangNhap);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnDangXuat);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnThoat);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnTaoTk);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnRestore);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Hệ thống";
             // 
@@ -323,10 +326,11 @@ namespace BTNT.View
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.btnQuyen);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 693);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 1331);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(832, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1664, 48);
             // 
             // documentManager1
             // 
@@ -338,12 +342,13 @@ namespace BTNT.View
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 717);
+            this.ClientSize = new System.Drawing.Size(1664, 1379);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FormMain";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
@@ -365,7 +370,7 @@ namespace BTNT.View
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarButtonItem btnDangNhap;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
-        private DevExpress.XtraBars.BarButtonItem btnTaoTk;
+        private DevExpress.XtraBars.BarButtonItem btnRestore;
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.Ribbon.RibbonPage rbpTrangChu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpgTrangChu;

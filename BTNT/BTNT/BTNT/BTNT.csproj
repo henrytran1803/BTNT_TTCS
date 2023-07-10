@@ -32,15 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v22.2" />
-    <Reference Include="DevExpress.Data.Desktop.v22.2" />
-    <Reference Include="DevExpress.Data.v22.2" />
-    <Reference Include="DevExpress.Printing.v22.2.Core" />
-    <Reference Include="DevExpress.Utils.v22.2" />
-    <Reference Include="DevExpress.XtraBars.v22.2" />
-    <Reference Include="DevExpress.Sparkline.v22.2.Core" />
-    <Reference Include="DevExpress.XtraEditors.v22.2" />
-    <Reference Include="DevExpress.Drawing.v22.2" />
+    <Reference Include="DevExpress.BonusSkins.v23.1" />
+    <Reference Include="DevExpress.Data.Desktop.v23.1" />
+    <Reference Include="DevExpress.Data.v23.1" />
+    <Reference Include="DevExpress.Printing.v23.1.Core" />
+    <Reference Include="DevExpress.Utils.v23.1" />
+    <Reference Include="DevExpress.XtraBars.v23.1" />
+    <Reference Include="DevExpress.Sparkline.v23.1.Core" />
+    <Reference Include="DevExpress.XtraEditors.v23.1" />
+    <Reference Include="DevExpress.Drawing.v23.1" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -98,6 +98,12 @@
     </Compile>
     <Compile Include="Manager\FormMuon.Designer.cs">
       <DependentUpon>FormMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\FormRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\FormRestore.Designer.cs">
+      <DependentUpon>FormRestore.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\FormSoHuu.cs">
       <SubType>Form</SubType>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\FormMuon.resx">
       <DependentUpon>FormMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\FormRestore.resx">
+      <DependentUpon>FormRestore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\FormSoHuu.resx">
       <DependentUpon>FormSoHuu.cs</DependentUpon>

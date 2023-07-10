@@ -20,16 +20,16 @@ namespace BTNT
 
         public static SqlConnection conn = new SqlConnection();//conn
         public static String connstr = "";//connstr
-        public static String connstrPublisher = "Data Source=HENRYF46A;Initial Catalog=BTNT;Integrated Security=True";
+        public static String connstrPublisher = "Data Source=DESKTOP-SUVI3QC;Initial Catalog=BTNT;Integrated Security=True";
         public static SqlDataReader myReader;//myReader
         public static String database = "BTNT";
 
-        public static String serverName = "HENRYF46A";//servername
+        public static String serverName = "DESKTOP-SUVI3QC";//servername
         public static String serverNameLeft = "";
         public static String userName = "";//username
 
         public static String loginName = "nd";//mlogin
-        public static String loginPassword = "123456";//password
+        public static String loginPassword = "1234";//password
 
 
         public static String currentLogin = "";//mloginDN
