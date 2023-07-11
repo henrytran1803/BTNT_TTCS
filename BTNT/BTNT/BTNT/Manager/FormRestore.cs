@@ -85,6 +85,10 @@ namespace BTNT.Manager
             {
                 if (cheDo == 1)
                 {
+                    if (Program.conn.State == ConnectionState.Closed)
+                    {
+                        Program.conn.Open();
+                    }
                     string q = "BACKUP DATABASE [" + Program.database + "] TO DISK='" + tbLink.Text + "\\" + "BTNT" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak'";
 
                     SqlCommand scmd = new SqlCommand(q, Program.conn);
@@ -93,9 +97,14 @@ namespace BTNT.Manager
                     MessageBox.Show("Backup taken successfully", "Backup successs", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbLink.Text = "";
                     btnChon.Enabled = false;
+                    Program.conn.Close();
                 }
                 else if (cheDo == 2)
                 {
+                    if (Program.conn.State == ConnectionState.Closed)
+                    {
+                        Program.conn.Open();
+                    }
                     string sql1 = string.Format("ALTER DATABASE [" + Program.database + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
                     SqlCommand cmd1 = new SqlCommand(sql1, Program.conn);
                     cmd1.ExecuteNonQuery();
@@ -111,6 +120,7 @@ namespace BTNT.Manager
                     MessageBox.Show("Database Restored successfully", "Restore Database successs", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbLink.Text = "";
                     btnChon.Enabled = false;
+                    Program.conn.Close();
                 }
             }
         }
