@@ -30,11 +30,11 @@ namespace BTNT.Manager
         private void InitializeComponent()
         {
             this.gbRS = new System.Windows.Forms.GroupBox();
-            this.btnChon = new System.Windows.Forms.Button();
-            this.btnDiachi = new System.Windows.Forms.Button();
-            this.tbLink = new System.Windows.Forms.TextBox();
-            this.rbtBK = new System.Windows.Forms.RadioButton();
             this.rbtRS = new System.Windows.Forms.RadioButton();
+            this.rbtBK = new System.Windows.Forms.RadioButton();
+            this.tbLink = new System.Windows.Forms.TextBox();
+            this.btnDiachi = new System.Windows.Forms.Button();
+            this.btnChon = new System.Windows.Forms.Button();
             this.gbRS.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,32 +52,17 @@ namespace BTNT.Manager
             this.gbRS.TabStop = false;
             this.gbRS.Text = "Back up";
             // 
-            // btnChon
+            // rbtRS
             // 
-            this.btnChon.Location = new System.Drawing.Point(514, 440);
-            this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(295, 44);
-            this.btnChon.TabIndex = 0;
-            this.btnChon.Text = "Back up";
-            this.btnChon.UseVisualStyleBackColor = true;
-            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
-            // 
-            // btnDiachi
-            // 
-            this.btnDiachi.Location = new System.Drawing.Point(986, 307);
-            this.btnDiachi.Name = "btnDiachi";
-            this.btnDiachi.Size = new System.Drawing.Size(179, 44);
-            this.btnDiachi.TabIndex = 1;
-            this.btnDiachi.Text = "Location";
-            this.btnDiachi.UseVisualStyleBackColor = true;
-            this.btnDiachi.Click += new System.EventHandler(this.btnDiachi_Click);
-            // 
-            // tbLink
-            // 
-            this.tbLink.Location = new System.Drawing.Point(392, 320);
-            this.tbLink.Name = "tbLink";
-            this.tbLink.Size = new System.Drawing.Size(545, 31);
-            this.tbLink.TabIndex = 2;
+            this.rbtRS.AutoSize = true;
+            this.rbtRS.Location = new System.Drawing.Point(721, 118);
+            this.rbtRS.Name = "rbtRS";
+            this.rbtRS.Size = new System.Drawing.Size(118, 29);
+            this.rbtRS.TabIndex = 3;
+            this.rbtRS.TabStop = true;
+            this.rbtRS.Text = "Restore";
+            this.rbtRS.UseVisualStyleBackColor = true;
+            this.rbtRS.CheckedChanged += new System.EventHandler(this.rbtRS_CheckedChanged);
             // 
             // rbtBK
             // 
@@ -91,17 +76,32 @@ namespace BTNT.Manager
             this.rbtBK.UseVisualStyleBackColor = true;
             this.rbtBK.CheckedChanged += new System.EventHandler(this.rbtBK_CheckedChanged);
             // 
-            // rbtRS
+            // tbLink
             // 
-            this.rbtRS.AutoSize = true;
-            this.rbtRS.Location = new System.Drawing.Point(721, 118);
-            this.rbtRS.Name = "rbtRS";
-            this.rbtRS.Size = new System.Drawing.Size(118, 29);
-            this.rbtRS.TabIndex = 3;
-            this.rbtRS.TabStop = true;
-            this.rbtRS.Text = "Restore";
-            this.rbtRS.UseVisualStyleBackColor = true;
-            this.rbtRS.CheckedChanged += new System.EventHandler(this.rbtRS_CheckedChanged);
+            this.tbLink.Location = new System.Drawing.Point(392, 320);
+            this.tbLink.Name = "tbLink";
+            this.tbLink.Size = new System.Drawing.Size(545, 31);
+            this.tbLink.TabIndex = 2;
+            // 
+            // btnDiachi
+            // 
+            this.btnDiachi.Location = new System.Drawing.Point(986, 307);
+            this.btnDiachi.Name = "btnDiachi";
+            this.btnDiachi.Size = new System.Drawing.Size(179, 44);
+            this.btnDiachi.TabIndex = 1;
+            this.btnDiachi.Text = "Location";
+            this.btnDiachi.UseVisualStyleBackColor = true;
+            this.btnDiachi.Click += new System.EventHandler(this.btnDiachi_Click);
+            // 
+            // btnChon
+            // 
+            this.btnChon.Location = new System.Drawing.Point(514, 440);
+            this.btnChon.Name = "btnChon";
+            this.btnChon.Size = new System.Drawing.Size(295, 44);
+            this.btnChon.TabIndex = 0;
+            this.btnChon.Text = "Back up";
+            this.btnChon.UseVisualStyleBackColor = true;
+            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // FormRestore
             // 
@@ -111,6 +111,7 @@ namespace BTNT.Manager
             this.Controls.Add(this.gbRS);
             this.Name = "FormRestore";
             this.Text = "Back up/ Restore";
+            this.Load += new System.EventHandler(this.FormRestore_Load);
             this.gbRS.ResumeLayout(false);
             this.gbRS.PerformLayout();
             this.ResumeLayout(false);

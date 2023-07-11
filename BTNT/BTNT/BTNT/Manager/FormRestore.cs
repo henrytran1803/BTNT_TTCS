@@ -85,44 +85,30 @@ namespace BTNT.Manager
             {
                 if (cheDo == 1)
                 {
-                    string cmd = "BACKUP DATABASE [" + Program.database + "] TO DISK = @FilePath";
+                    string q = "BACKUP DATABASE [" + Program.database + "] TO DISK='" + tbLink.Text + "\\" + "Database" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak'";
 
-                    try
-                    {
-                        SqlCommand sqlCommand = new SqlCommand(cmd, Program.conn);
-                        sqlCommand.Parameters.AddWithValue("@FilePath", tbLink.Text);
-                        sqlCommand.ExecuteNonQuery();
-                        MessageBox.Show("Backup successful!");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Backup failed: " + ex.Message);
-                    }
+                    SqlCommand scmd = new SqlCommand(q, Program.conn);
+                    scmd.ExecuteNonQuery();
+                    // s.Speak("Backup taken successfully");
+                    MessageBox.Show("Backup taken successfully", "Backup successs", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbLink.Text = "";
                     btnChon.Enabled = false;
                 }
                 else if (cheDo == 2)
                 {
-                    string connectionString = "Data Source=DESKTOP-SUVI3QC;Initial Catalog=BTNT;User ID=sa;Password=18032002;";
-                    SqlConnection conn = new SqlConnection(connectionString);
-                    string cmd = "RESTORE DATABASE [" + Program.database + "] FROM DISK = @FilePath WITH RECOVERY";
+                    string sql1 = string.Format("ALTER DATABASE [" + Program.database + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
+                    SqlCommand cmd1 = new SqlCommand(sql1, Program.conn);
+                    cmd1.ExecuteNonQuery();
 
-                    try
-                    {
-                        conn.Open();
-                        SqlCommand sqlCommand = new SqlCommand(cmd, conn);
-                        sqlCommand.Parameters.AddWithValue("@FilePath", tbLink.Text);
-                        sqlCommand.ExecuteNonQuery();
-                        MessageBox.Show("Restore successful!");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Restore failed: " + ex.Message);
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
+                    string sql2 = string.Format("USE MASTER RESTORE DATABASE [" + Program.database + "] FROM DISK='" + tbLink.Text + "' WITH REPLACE;");
+                    SqlCommand cmd2 = new SqlCommand(sql2, Program.conn);
+                    cmd2.ExecuteNonQuery();
+
+                    string sql3 = string.Format("ALTER DATABASE [" + Program.database + "] SET MULTI_USER");
+                    SqlCommand cmd3 = new SqlCommand(sql3, Program.conn);
+                    cmd3.ExecuteNonQuery();
+                    // s.Speak("Database Restored successfully");
+                    MessageBox.Show("Database Restored successfully", "Restore Database successs", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbLink.Text = "";
                     btnChon.Enabled = false;
                 }
@@ -134,6 +120,11 @@ namespace BTNT.Manager
         {
             DateTime currentDate = DateTime.Now;
             return currentDate.ToString("yyyyMMdd");
+        }
+
+        private void FormRestore_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
