@@ -320,6 +320,7 @@ namespace BTNT.View
             else
             {
                 FormRestore form = new FormRestore();
+                form.MdiParent = this;
                 form.Show();
 
             }
