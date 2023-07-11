@@ -112,7 +112,7 @@ namespace BTNT.Manager
         }
         private void layDanhSachThoiDai()
         {
-            string cmd = "SELECT MATD, TENTD FROM THOI_DAI";
+            string cmd = "SELECT MATD, TENTD FROM THOI_DAI ORDER BY TENTD";
             try
             {
                 using (SqlConnection connection = new SqlConnection(Program.connstr))
@@ -164,7 +164,7 @@ namespace BTNT.Manager
         }
         private void layDanhSachChuDe()
         {
-            string cmd = "SELECT MACD,TENCHUDE FROM CHUDE";
+            string cmd = "SELECT MACD,TENCHUDE FROM CHUDE ORDER BY TENCHUDE";
             try
             {
                 using (SqlConnection connection = new SqlConnection(Program.connstr))
@@ -190,7 +190,7 @@ namespace BTNT.Manager
         }
         private void layDanhSachQuocGia()
         {
-            string cmd = "SELECT MAQT, TENQT FROM QUOC_GIA";
+            string cmd = "SELECT MAQT, TENQT FROM QUOC_GIA ORDER BY TENQT";
             try
             {
                 using (SqlConnection connection = new SqlConnection(Program.connstr))
@@ -549,6 +549,11 @@ namespace BTNT.Manager
         {
             PhucHoiDuLieuTPNT();
             FormTPNT_Load(sender, e);
+        }
+
+        private void gbThongTin_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

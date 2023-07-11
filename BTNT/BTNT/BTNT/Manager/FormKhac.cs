@@ -46,7 +46,7 @@ namespace BTNT.Manager
 
         private void layDanhSachPC()
         {
-            string cmd = "SELECT MAPC, TENPC FROM PHONG_CACH_K";
+            string cmd = "SELECT MAPC, TENPC FROM PHONG_CACH_K ORDER BY TENPC";
             try
             {
                 using (SqlConnection connection = new SqlConnection(Program.connstr))
@@ -72,7 +72,7 @@ namespace BTNT.Manager
         }
         private void layDanhSachTL()
         {
-            string cmd = "SELECT MATL, TENTL FROM THE_LOAI";
+            string cmd = "SELECT MATL, TENTL FROM THE_LOAI ORDER BY TENTL";
             try
             {
                 using (SqlConnection connection = new SqlConnection(Program.connstr))

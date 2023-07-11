@@ -85,11 +85,12 @@ namespace BTNT.Manager
             {
                 if (cheDo == 1)
                 {
-                    string cmd = "BACKUP DATABASE [" + Program.database + "] TO DISK= '" + tbLink.Text + "\\database" + GetFormattedCurrentDate() + ".bak'";
+                    string cmd = "BACKUP DATABASE [" + Program.database + "] TO DISK = @FilePath";
 
                     try
                     {
                         SqlCommand sqlCommand = new SqlCommand(cmd, Program.conn);
+                        sqlCommand.Parameters.AddWithValue("@FilePath", tbLink.Text);
                         sqlCommand.ExecuteNonQuery();
                         MessageBox.Show("Backup successful!");
                     }
@@ -102,17 +103,25 @@ namespace BTNT.Manager
                 }
                 else if (cheDo == 2)
                 {
-                    string cmd = "RESTORE DATABASE [" + Program.database + "] FROM DISK '" + tbLink.Text + "' WITH NoRecovery";
+                    string connectionString = "Data Source=DESKTOP-SUVI3QC;Initial Catalog=BTNT;User ID=sa;Password=18032002;";
+                    SqlConnection conn = new SqlConnection(connectionString);
+                    string cmd = "RESTORE DATABASE [" + Program.database + "] FROM DISK = @FilePath WITH RECOVERY";
 
                     try
                     {
-                        SqlCommand sqlCommand = new SqlCommand(cmd, Program.conn);
+                        conn.Open();
+                        SqlCommand sqlCommand = new SqlCommand(cmd, conn);
+                        sqlCommand.Parameters.AddWithValue("@FilePath", tbLink.Text);
                         sqlCommand.ExecuteNonQuery();
                         MessageBox.Show("Restore successful!");
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Restore failed: " + ex.Message);
+                    }
+                    finally
+                    {
+                        conn.Close();
                     }
                     tbLink.Text = "";
                     btnChon.Enabled = false;

@@ -27,7 +27,7 @@ namespace BTNT.Manager
         }
         private void layDanhSachHT()
         {
-            string cmd = "SELECT MAHT, TENHINHTHUC FROM HINH_THUC";
+            string cmd = "SELECT MAHT, TENHINHTHUC FROM HINH_THUC ORDER BY TENHINHTHUC";
             try
             {
                 using (SqlConnection connection = new SqlConnection(Program.connstr))

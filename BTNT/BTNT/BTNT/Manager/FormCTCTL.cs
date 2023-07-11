@@ -133,8 +133,7 @@ namespace BTNT.Manager
                 ds = new DataSet();
             }
 
-            string sqlCommand = "EXEC LayDanhSach_tpnt_CTL @MACTL = '" + MA + "';" +
-                 "SELECT MATPNT, TENTP FROM TPNT;"; 
+            string sqlCommand = "SELECT MATPNT, TENTP FROM dbo.LayDanhSach_tpnt_CTL_fn('"+MA+"')"; 
             DataTable dataTable = Program.ExecSqlDataTable(sqlCommand);
 
             // Xóa bảng "TPNT" nếu đã tồn tại trong DataSet
@@ -156,7 +155,6 @@ namespace BTNT.Manager
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
-
         private void dgDSTPNT_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)

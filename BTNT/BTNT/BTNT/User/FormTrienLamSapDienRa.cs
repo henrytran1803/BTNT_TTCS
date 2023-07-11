@@ -30,7 +30,7 @@ namespace BTNT.User
             {
                 ds = new DataSet();
             }
-            string sqlCommand = "SELECT MACTL, TENCTL, NGAYBATDAU, NGAYKETTHUC FROM CUOC_TRIEN_LAM WHERE NGAYBATDAU >= GETDATE() ";
+            string sqlCommand = "SELECT MACTL, TENCTL, NGAYBATDAU, NGAYKETTHUC FROM CUOC_TRIEN_LAM WHERE NGAYBATDAU >= GETDATE() ORDER BY NGAYBATDAU ";
             DataTable dataTable = Program.ExecSqlDataTable(sqlCommand);
 
             // Xóa bảng "TPNT" nếu đã tồn tại trong DataSet

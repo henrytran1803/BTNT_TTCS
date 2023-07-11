@@ -108,7 +108,7 @@ namespace BTNT.Manager
         }
         private void layDanhSachBST()
         {
-            string cmd = "SELECT MABST, TENBST FROM BO_SUU_TAP";
+            string cmd = "SELECT MABST, TENBST FROM BO_SUU_TAP ORDER BY TENBST";
             try
             {
                 using (SqlConnection connection = new SqlConnection(Program.connstr))

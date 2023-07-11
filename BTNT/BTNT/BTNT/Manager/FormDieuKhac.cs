@@ -106,7 +106,7 @@ namespace BTNT.Manager
         }
         private void layDanhSachVL()
         {
-            string cmd = "SELECT MAVL, TENVL FROM VAT_LIEU_DK";
+            string cmd = "SELECT MAVL, TENVL FROM VAT_LIEU_DK ORDER BY TENVL";
 
             try
             {
@@ -133,7 +133,7 @@ namespace BTNT.Manager
         }
         private void layDanhSachPC()
         {
-            string cmd = "SELECT MAPC, TENPC FROM PHONG_CACH_DK";
+            string cmd = "SELECT MAPC, TENPC FROM PHONG_CACH_DK ORDER BY TENPC";
             try
             {
                 using (SqlConnection connection = new SqlConnection(Program.connstr))
