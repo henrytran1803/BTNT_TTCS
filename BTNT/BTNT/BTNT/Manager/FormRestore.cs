@@ -85,7 +85,7 @@ namespace BTNT.Manager
             {
                 if (cheDo == 1)
                 {
-                    string q = "BACKUP DATABASE [" + Program.database + "] TO DISK='" + tbLink.Text + "\\" + "Database" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak'";
+                    string q = "BACKUP DATABASE [" + Program.database + "] TO DISK='" + tbLink.Text + "\\" + "BTNT" + "-" + DateTime.Now.ToString("yyyy-MM-dd--HH-mm-ss") + ".bak'";
 
                     SqlCommand scmd = new SqlCommand(q, Program.conn);
                     scmd.ExecuteNonQuery();
@@ -116,11 +116,7 @@ namespace BTNT.Manager
         }
 
 
-        private string GetFormattedCurrentDate()
-        {
-            DateTime currentDate = DateTime.Now;
-            return currentDate.ToString("yyyyMMdd");
-        }
+
 
         private void FormRestore_Load(object sender, EventArgs e)
         {
