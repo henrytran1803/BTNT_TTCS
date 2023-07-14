@@ -226,6 +226,7 @@ namespace BTNT.View
             btnQuyen.Caption = "Người dùng";
             btnRestore.Enabled = false;
             btnDangXuat.Enabled = false;
+
         }
         public void nhanVien()
         {
@@ -251,7 +252,7 @@ namespace BTNT.View
             btnDangNhap.Enabled = true;
             btnDangXuat.Enabled = false;
         }
-        private void FormMain_Load(object sender, EventArgs e)
+        public void FormMain_Load(object sender, EventArgs e)
         {
             if (Program.role == "NGUOIDUNG")
             {

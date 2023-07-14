@@ -72,6 +72,7 @@ namespace BTNT.View
                     }
 
                     Program.formMain.ennable();
+
                     this.Visible = false;
                 }
             }
